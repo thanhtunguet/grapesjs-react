@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-react",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": false,
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
