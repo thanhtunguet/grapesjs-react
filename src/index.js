@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 // Styles
 import 'grapesjs/dist/css/grapes.min.css';
 
-import App from './example/App';
-import * as serviceWorker from './example/serviceWorker';
+import App from 'example/App';
+import * as serviceWorker from 'example/serviceWorker';
 
 ReactDOM.render(
   <App/>,

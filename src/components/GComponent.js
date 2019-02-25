@@ -1,25 +1,24 @@
 // @flow
 
-import type {BlockContentType, ComponentAttributesType} from 'types/grapes';
-
 class GComponent {
+  /**
+   * Component type
+   *
+   * @type {string}
+   */
   type: string;
-
-  attributes: ComponentAttributesType;
 
   constructor(type: string) {
     this.type = type;
   }
 
-  isComponent: Function = (element: HTMLElement) => {
+  events = {};
+
+  isComponent: Function = () => {
     throw new Error('Method `isComponent` requires implementation');
   };
 
-  bindTo(editor) {
-    editor.DomComponents.add(this.type, this);
-  }
-
-  render(): BlockContentType {
+  render: Function = () => {
     throw new Error('Method `render` requires implementation');
   };
 }

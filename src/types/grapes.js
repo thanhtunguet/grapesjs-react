@@ -18,5 +18,5 @@ export type ComponentAttributesType = {
   open: boolean,
   removable: boolean,
   resizable: boolean,
-  script: string,
-}
+  script: string
+};
