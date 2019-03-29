@@ -6,7 +6,7 @@ import gjsPresetWebpage from 'grapesjs-preset-webpage';
 import gjsPresetNewsletter from 'grapesjs-preset-newsletter';
 import gjsCustomCode from 'grapesjs-custom-code';
 import gjsForms from 'grapesjs-plugin-forms';
-import GComponent from '/components/GComponent';
+import GComponent from './GComponent';
 import type {GrapesPluginType} from 'types/grapes';
 
 const {Component} = React;
