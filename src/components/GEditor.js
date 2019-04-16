@@ -1,6 +1,6 @@
 // @flow
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import GrapesJS from 'grapesjs';
 // GrapesJS Presets
 import gjsPresetWebpage from 'grapesjs-preset-webpage';
@@ -10,6 +10,11 @@ import gjsBasicBlocks from 'grapesjs-blocks-basic';
 import GComponent from 'components/GComponent';
 import { errorHandler } from 'helpers';
 import type { GrapesPluginType } from 'types/grapes';
+
+const {
+  useEffect,
+  useState,
+} = React;
 
 type PropsType = {
   id: string,
