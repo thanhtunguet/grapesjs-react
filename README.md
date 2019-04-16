@@ -31,7 +31,8 @@ _The first integration of GrapesJS for React._
     |------------|-------------------------|-------------------------|---------------|
     | components | Custom components       | Array<GComponent>       | Empty         |
     | plugins    | Additional plugins      | Array<GPluginType>      | Empty         |
-    | newsletter | Apply newsletter preset | boolean                 | true          |
+    | newsletter | Apply newsletter preset | boolean                 | false         |
+    | webpage    | Apply webpage preset    | boolean                 | false         | 
 
 * This package does not include CSS, so you have to import css from `grapesjs` package manually.
 
