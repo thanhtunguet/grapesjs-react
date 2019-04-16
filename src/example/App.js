@@ -1,30 +1,31 @@
 // @flow
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import GEditor from 'components/GEditor';
 import 'antd/dist/antd.min.css';
-import {Tabs} from 'antd';
-
-const {TabPane} = Tabs;
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'antd';
 
 function App() {
-  const [count, setCount] = useState('1');
+  const [mounted, setMounted] = useState(true);
+
+  function handleMounting() {
+    setMounted(!mounted);
+  }
+
   return (
-    <Tabs defaultActiveKey="1">
-      <TabPane tab="Tab 1" key="1">
-        <GEditor id="geditor" newsletter/>
-        <div>
-          {count}
-          <button onClick={() => {
-            setCount(count + 1);
-          }}>
-            Plus
-          </button>
-        </div>
-      </TabPane>
-      <TabPane tab="Tab 2" key="2">Content of Tab Pane 2</TabPane>
-      <TabPane tab="Tab 3" key="3">Content of Tab Pane 3</TabPane>
-    </Tabs>
+    <div className="container">
+      <div className="py-2">
+        <Button htmlType="button" type="primary" onClick={handleMounting}>
+          {mounted ? 'Unmount' : 'Mount'}
+        </Button>
+      </div>
+      <div>
+        {mounted && (
+          <GEditor id="geditor" newsletter/>
+        )}
+      </div>
+    </div>
   );
 }
 

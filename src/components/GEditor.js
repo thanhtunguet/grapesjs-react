@@ -1,12 +1,15 @@
 // @flow
 
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import GrapesJS from 'grapesjs';
+// GrapesJS Presets
 import gjsPresetWebpage from 'grapesjs-preset-webpage';
 import gjsPresetNewsletter from 'grapesjs-preset-newsletter';
+// GrapesJS Plugins
 import gjsBasicBlocks from 'grapesjs-blocks-basic';
 import GComponent from 'components/GComponent';
-import type {GrapesPluginType} from 'types/grapes';
+import { errorHandler } from 'helpers';
+import type { GrapesPluginType } from 'types/grapes';
 
 type PropsType = {
   id: string,
@@ -18,66 +21,94 @@ type PropsType = {
   components: Array<GComponent>,
   // Editor configurations
   storageManager: {},
-  blockManager: {}
+  blockManager: {},
 };
 
 function GEditor(props: PropsType) {
-  if (!props.id) {
-    throw new Error('Editor id prop is required');
-  }
-  useEffect(() => {
-    let editor = GrapesJS.editors.find((e: Object) => e.getContainer().id === props.id);
-    if (!editor) {
-      let plugins = [
-        gjsBasicBlocks,
-        ...props.plugins,
-      ];
-      if (props.webpage) {
-        plugins = [
-          ...plugins,
-          gjsPresetWebpage,
-        ];
-      }
-      if (props.newsletter) {
-        plugins = [
-          ...plugins,
-          gjsPresetNewsletter,
-        ];
-      }
-      editor = GrapesJS.init({
-        fromElement: true,
-        container: `#${props.id}`,
-        plugins,
-        storageManager: props.storageManager,
-        blockManager: props.blockManager,
-      });
-      const defaultType = editor.DomComponents.getType('default');
-      const defaultModel = defaultType.model;
-      const defaultView = defaultType.view;
-      props.components.forEach((component: GComponent) => {
-        editor.DomComponents.addType(component.type, {
-          model: defaultModel.extend({
-            defaults: Object.assign({}, defaultModel.prototype.defaults, {
+  const [editor, setEditor] = useState(null);
 
-            }),
-          }, {
-            isComponent: component.isComponent.bind(this),
-          }),
-          view: defaultView.extend({
-            events: component.events,
-            render: component.render.bind(this),
-          }),
+  const {
+    id,
+    storageManager,
+    blockManager,
+    components,
+    webpage,
+    newsletter,
+  } = props;
+
+  if (!id) {
+    throw errorHandler.propRequired('id');
+  }
+
+  useEffect(
+    () => {
+      if (!editor) {
+        let plugins = [
+          gjsBasicBlocks,
+          ...props.plugins,
+        ];
+        if (webpage) {
+          plugins = [
+            ...plugins,
+            gjsPresetWebpage,
+          ];
+        }
+        if (newsletter) {
+          plugins = [
+            ...plugins,
+            gjsPresetNewsletter,
+          ];
+        }
+        const editor = GrapesJS.init({
+          fromElement: true,
+          container: `#${id}`,
+          plugins,
+          storageManager: storageManager,
+          blockManager: blockManager,
         });
-      });
-    }
-    document.getElementById(props.id).append(editor.render());
-    console.log('Rerender');
-    return function () {
-      editor.destroy();
-    };
-  });
+        const defaultType = editor.DomComponents.getType('default');
+        const defaultModel = defaultType.model;
+        const defaultView = defaultType.view;
+        components.forEach((component: GComponent) => {
+          editor.DomComponents.addType(component.type,
+            {
+              model: defaultModel.extend(
+                {
+                  defaults: Object.assign({}, defaultModel.prototype.defaults, {}),
+                },
+                {
+                  isComponent: component.isComponent.bind(this),
+                },
+              ),
+              view: defaultView.extend(
+                {
+                  events: component.events,
+                  render: component.render.bind(this),
+                },
+              ),
+            });
+        });
+        setEditor(editor);
+      } else {
+        if (document) {
+          document.getElementById(id).append(editor.render());
+        }
+      }
+      return function cleanup() {
+        if (editor) {
+          // Destroy current editor
+          editor.destroy();
+        }
+        // Remove editor from global GrapesJS store
+        GrapesJS.editors = GrapesJS.editors.filter((e) => {
+          return e !== editor;
+        });
+      };
+    },
+    [],
+  );
   return (
-    <div id={props.id}/>
+    <div id={id}/>
   );
 }
 
@@ -92,4 +123,4 @@ GEditor.defaultProps = {
 
 export default GEditor;
 
-window.grapesjs = GrapesJS;
+window.grapesjs = window.GrapesJS = GrapesJS;

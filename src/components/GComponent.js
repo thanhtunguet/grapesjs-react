@@ -1,5 +1,7 @@
 // @flow
 
+import { errorHandler } from 'helpers';
+
 class GComponent {
   /**
    * Component type
@@ -7,19 +9,37 @@ class GComponent {
    * @type {string}
    */
   type: string;
+  /**
+   * Component events
+   *
+   * @type {Object}
+   */
+  events = {};
 
+  /**
+   * Component constructor
+   * @param type {string}
+   */
   constructor(type: string) {
     this.type = type;
   }
 
-  events = {};
-
+  /**
+   * isComponent method
+   *
+   * This method requires implementation
+   */
   isComponent: Function = () => {
-    throw new Error('Method `isComponent` requires implementation');
+    return errorHandler.methodRequiresImplementation('isComponent');
   };
 
+  /**
+   * render method
+   *
+   * This method requires implementation
+   */
   render: Function = () => {
-    throw new Error('Method `render` requires implementation');
+    return errorHandler.methodRequiresImplementation('render');
   };
 }
 

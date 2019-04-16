@@ -3,10 +3,11 @@ GrapesJS React Integration
 _The first integration of GrapesJS for React._
 
 1. Installation
+
     ```bash
     yarn add grapesjs-react
     ```
-    
+
 2. Usage
 
     ```javascript
@@ -20,11 +21,12 @@ _The first integration of GrapesJS for React._
          );
        }
     }
- 
+
     export default GEditorExample;
     ```
 
 3. Options
+
     | Props      | Description             | Type                    | Default Value |
     |------------|-------------------------|-------------------------|---------------|
     | components | Custom components       | Array<GComponent>       | Empty         |
