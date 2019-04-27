@@ -10,6 +10,7 @@ _The first integration of GrapesJS for React._
 
 2. Usage
 
+    Editor:
     ```javascript
     import React, {Component} from 'react';
     import GEditor from 'grapesjs-react';
@@ -24,7 +25,37 @@ _The first integration of GrapesJS for React._
 
     export default GEditorExample;
     ```
-
+    
+    Custom block [src/example/CustomBlock.js](https://github.com/thanhtunguet/grapesjs-react/blob/master/src/example/CustomBlock.js):
+    ```javascript
+    import React from 'react';
+    import GEditor from 'components/GEditor';
+    import GBlock from 'components/GBlock';
+    import 'antd/dist/antd.min.css';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    
+    class SimpleBlock extends GBlock {
+      content = `<div class="simple-block"> This is a simple block </div>`;
+    
+      constructor() {
+        super('simple-block', 'Simple Block');
+      }
+    }
+    
+    function CustomBlock() {
+      return (
+        <div className="container-fluid">
+          <div>
+            <GEditor id="geditor" newsletter blocks={[
+              new SimpleBlock(),
+            ]}/>
+          </div>
+        </div>
+      );
+    }
+    
+    export default CustomBlock;
+    ```
 3. Options
 
     | Props      | Description             | Type                    | Default Value |
