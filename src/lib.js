@@ -11,3 +11,9 @@ export const Component = GComponent;
 export const Editor = GEditor;
 
 export default Editor;
+
+export {
+  GEditor,
+  GBlock,
+  GComponent,
+};

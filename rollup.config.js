@@ -7,6 +7,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import resolve from 'rollup-plugin-node-resolve';
 import url from 'rollup-plugin-url';
+import includePaths from 'rollup-plugin-includepaths';
 
 import pkg from './package.json';
 
@@ -17,30 +18,36 @@ const config = {
       file: pkg.main,
       format: 'cjs',
       sourcemap: true,
-      exports: 'named'
+      exports: 'named',
     },
     {
       file: pkg.module,
       format: 'es',
       sourcemap: true,
-      exports: 'named'
-    }
+      exports: 'named',
+    },
   ],
   plugins: [
     external(),
     postcss({
-      modules: true
+      modules: true,
     }),
     url(),
     babel(),
     resolve([
       path.resolve('node_modules/'),
-      path.resolve('src/')
+      path.resolve('src/'),
     ]),
     commonjs({
-      include: 'node_modules/**'
-    })
-  ]
+      include: 'node_modules/**',
+    }),
+    includePaths({
+      paths: [
+        './src/',
+        './node_modules',
+      ],
+    }),
+  ],
 };
 
 export default config;

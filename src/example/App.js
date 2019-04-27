@@ -1,21 +1,12 @@
 // @flow
 
-import React, {Component} from 'react';
-import GEditor from '../components/GEditor';
+import React from 'react';
 
-type Props = {}
-
-type State = {}
-
-class App extends Component<Props, State> {
-
-  render() {
-    return (
-      <div className="App">
-        <GEditor/>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+    </div>
+  );
 }
 
 export default App;
