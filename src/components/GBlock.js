@@ -32,6 +32,13 @@ class GBlock {
   component: Object;
 
   /**
+   * Block attributes
+   *
+   * @types {Object}
+   */
+  attributes: Object;
+
+  /**
    * Block constructor
    *
    * @param id {string}

@@ -2,14 +2,14 @@
 
 import React from 'react';
 import GrapesJS from 'grapesjs';
-// GrapesJS Presets
+// Presets and Plugins
 import gjsPresetWebpage from 'grapesjs-preset-webpage';
 import gjsPresetNewsletter from 'grapesjs-preset-newsletter';
-// GrapesJS Plugins
 import gjsBasicBlocks from 'grapesjs-blocks-basic';
-import GComponent from 'components/GComponent';
-import { errorHandler } from 'helpers';
-import type { GrapesPluginType } from 'types/grapes';
+
+import GComponent from './GComponent';
+import type {GrapesPluginType} from '../types/grapes';
+import GBlock from './GBlock';
 
 const {
   useEffect,
@@ -24,27 +24,23 @@ type PropsType = {
   plugins: Array<GrapesPluginType>,
   // Components
   components: Array<GComponent>,
+  blocks: Array<GBlock>,
   // Editor configurations
   storageManager: {},
   blockManager: {},
 };
 
 function GEditor(props: PropsType) {
-  const [editor, setEditor] = useState(null);
-
   const {
-    id,
+    id = 'grapesjs-react-editor',
     storageManager,
     blockManager,
     components,
+    blocks,
     webpage,
     newsletter,
   } = props;
-
-  if (!id) {
-    throw errorHandler.propRequired('id');
-  }
-
+  const [editor, setEditor] = useState(null);
   useEffect(
     () => {
       if (!editor) {
@@ -71,6 +67,7 @@ function GEditor(props: PropsType) {
           storageManager: storageManager,
           blockManager: blockManager,
         });
+
         const defaultType = editor.DomComponents.getType('default');
         const defaultModel = defaultType.model;
         const defaultView = defaultType.view;
@@ -79,7 +76,7 @@ function GEditor(props: PropsType) {
             {
               model: defaultModel.extend(
                 {
-                  defaults: Object.assign({}, defaultModel.prototype.defaults, {}),
+                  defaults: Object.assign({}, defaultModel.prototype.defaults),
                 },
                 {
                   isComponent: component.isComponent.bind(this),
@@ -93,6 +90,9 @@ function GEditor(props: PropsType) {
               ),
             });
         });
+        blocks.forEach((block: GBlock) => {
+          editor.BlockManager.add(block.id, block);
+        });
         setEditor(editor);
       } else {
         if (document) {
@@ -105,13 +105,12 @@ function GEditor(props: PropsType) {
           editor.destroy();
         }
         // Remove editor from global GrapesJS store
-        GrapesJS.editors = GrapesJS.editors.filter((e) => {
-          return e !== editor;
-        });
+        GrapesJS.editors = GrapesJS.editors.filter((e) => e !== editor);
       };
     },
     [],
   );
+
   return (
     <div id={id}/>
   );

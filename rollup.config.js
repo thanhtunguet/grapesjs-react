@@ -7,6 +7,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import resolve from 'rollup-plugin-node-resolve';
 import url from 'rollup-plugin-url';
+import includePaths from 'rollup-plugin-includepaths';
 
 import pkg from './package.json';
 
@@ -39,6 +40,12 @@ const config = {
     ]),
     commonjs({
       include: 'node_modules/**',
+    }),
+    includePaths({
+      paths: [
+        './src/',
+        './node_modules',
+      ],
     }),
   ],
 };
