@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-react",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A React wrapper for GrapesJS library",
   "repository": "https://github.com/thanhtunguet/grapesjs-react",
   "author": {
@@ -18,9 +18,7 @@
     "grapesjs-plugin-ckeditor": "^0.0.9",
     "grapesjs-plugin-forms": "^1.0.1",
     "grapesjs-preset-newsletter": "^0.2.20",
-    "grapesjs-preset-webpage": "^0.1.10",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "grapesjs-preset-webpage": "^0.1.10"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -31,6 +29,8 @@
     "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@coreui/coreui": "^2.1.7",
+    "@storybook/cli": "^5.0.10",
+    "@storybook/react": "^5.0.10",
     "antd": "^3.13.6",
     "babel-eslint": "9",
     "babel-loader": "^8.0.4",
@@ -50,17 +50,22 @@
     "jest": "^24.7.1",
     "node-sass": "^4.11.0",
     "npm-install-peers": "^1.2.1",
+    "react-dom": "^16.8.6",
     "react-scripts": "2.0.4",
     "reactstrap": "^7.1.0",
     "rollup": "^0.66.4",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.1.8",
+    "rollup-plugin-includepaths": "^0.2.3",
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^1.6.2",
     "rollup-plugin-uglify": "^6.0.0",
     "rollup-plugin-url": "^2.0.0",
     "style-loader": "^0.23.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -81,6 +86,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "peers": "npm-install-peers",
-    "lint": "eslint --fix src/"
+    "lint": "eslint --fix src/",
+    "storybook": "start-storybook"
   }
 }
