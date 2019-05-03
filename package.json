@@ -80,7 +80,6 @@
     "pre-commit": "yarn lint"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "rollup -c",
     "watch": "rollup -c -w",
     "test": "react-scripts test",

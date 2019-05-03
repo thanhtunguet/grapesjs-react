@@ -6,10 +6,10 @@ import GrapesJS from 'grapesjs';
 import gjsPresetWebpage from 'grapesjs-preset-webpage';
 import gjsPresetNewsletter from 'grapesjs-preset-newsletter';
 import gjsBasicBlocks from 'grapesjs-blocks-basic';
-
+// Components
 import GComponent from './GComponent';
-import type {GrapesPluginType} from '../types/grapes';
 import GBlock from './GBlock';
+import type { GrapesPluginType } from 'types/grapes';
 
 const {
   useEffect,
@@ -121,6 +121,7 @@ GEditor.defaultProps = {
   newsletter: false,
   plugins: [],
   components: [],
+  blocks: [],
   storageManager: {},
   blockManager: {},
 };
