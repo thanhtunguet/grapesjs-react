@@ -3,7 +3,7 @@ GrapesJS React Integration
 _The first integration of GrapesJS for React._
 
 
-Dear developers, I am really happy that this package is useful to you. This was just a fortuitous idea when my task needed it. I created it without thinking that others need it, too. Now, I do not have enough time for it. So if you have an idea, find a bug, want to contribute by writing docs, ... go ahead! Simply fork this repository, add your code, then send me a pull request. I will be very happy if this package continue being maintained by its community.
+Dear developers, I am really happy that this package is useful to you. This was just a fortuitous idea when my task needed it. I created it without thinking that others need it, too. Now, I do not have enough time for it. So if you have an idea, found a bug, want to contribute by writing docs, ... go ahead! Simply fork this repository, add your code, then send me a pull request. I will be very happy if this package continue being maintained by its community.
 
 
 1. Installation
