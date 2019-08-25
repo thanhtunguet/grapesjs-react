@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es5",
+    "declaration": true,
+    "isolatedModules": false,
+    "types": [
+      "node",
+      "jest"
+    ],
+    "outDir": "dist",
+    "sourceMap": true,
+    "jsx": "react"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "src/**.spec.ts",
+    "src/**.spec.tsx",
+    "src/**.test.ts",
+    "src/**.test.tsx"
+  ]
+}

@@ -30,7 +30,7 @@ Dear developers, I am really happy that this package is useful to you. This was 
     export default GEditorExample;
     ```
     
-    Custom block [src/example/CustomBlock.js](https://github.com/thanhtunguet/grapesjs-react/blob/master/src/example/CustomBlock.js):
+    Custom block [src/example/CustomBlock.tsx](https://github.com/thanhtunguet/grapesjs-react/blob/master/src/example/CustomBlock.js):
     ```javascript
     import React from 'react';
     import GEditor from 'components/GEditor';

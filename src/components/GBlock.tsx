@@ -1,45 +1,45 @@
 // @flow
 
-import type { BlockContentType } from 'types/grapes';
+import {BlockContentType} from '../types/grapes';
 
 /**
  * Custom block class
  */
-class GBlock {
+abstract class GBlock {
   /**
    * Block Id
    *
    * @type {string}
    */
-  id: string;
+  public id: string;
 
   /**
    * Block label
    *
    * @type {string}
    */
-  label: string;
+  public label: string;
 
   /**
    * Block content
    *
    * @type {BlockContentType}
    */
-  content: BlockContentType;
+  public content: BlockContentType;
 
   /**
    * Block component
    *
    * @type {Object}
    */
-  component: Object;
+  public component: {};
 
   /**
    * Block attributes
    *
    * @types {Object}
    */
-  attributes: Object;
+  public attributes: {};
 
   /**
    * Block constructor
@@ -47,7 +47,7 @@ class GBlock {
    * @param id {string}
    * @param label {string}
    */
-  constructor(id: string, label: string) {
+  protected constructor(id: string, label: string) {
     this.setId(id);
     this.setLabel(label);
   }
@@ -57,18 +57,18 @@ class GBlock {
    *
    * @param id {string}
    */
-  setId: Function = (id: string) => {
+  public setId = (id: string) => {
     this.id = id;
-  };
+  }
 
   /**
    * Block label setter
    *
    * @param label {string}
    */
-  setLabel: Function = (label: string) => {
+  public setLabel = (label: string) => {
     this.label = label;
-  };
+  }
 }
 
 export default GBlock;

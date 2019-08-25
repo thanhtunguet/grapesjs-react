@@ -1,26 +1,28 @@
 // @flow
 
-import { errorHandler } from 'helpers';
+import {ErrorHelper} from 'helpers';
 
-class GComponent {
+abstract class GComponent {
   /**
    * Component type
    *
    * @type {string}
    */
-  type: string;
+  public type: string;
   /**
    * Component events
    *
    * @type {Object}
    */
-  events = {};
+  public events: {
+    [key: string]: Event,
+  } = {};
 
   /**
    * Component constructor
    * @param type {string}
    */
-  constructor(type: string) {
+  protected constructor(type: string) {
     this.type = type;
   }
 
@@ -29,18 +31,14 @@ class GComponent {
    *
    * This method requires implementation
    */
-  isComponent: Function = () => {
-    return errorHandler.methodRequiresImplementation('isComponent');
-  };
+  public abstract isComponent(element: Element): any;
 
   /**
    * render method
    *
    * This method requires implementation
    */
-  render: Function = () => {
-    return errorHandler.methodRequiresImplementation('render');
-  };
+  public abstract render(): any;
 }
 
 export default GComponent;
