@@ -6,7 +6,7 @@ import gjsPresetNewsletter from 'grapesjs-preset-newsletter';
 // Presets and Plugins
 import gjsPresetWebpage from 'grapesjs-preset-webpage';
 import React, {useEffect, useState} from 'react';
-import {GrapesPluginType, ISector, IStorageManager} from '../types/grapes';
+import {GrapesPluginType, ISector, IStorageManager, IStyleManager} from '../types/grapes';
 import GBlock from './GBlock';
 // Components
 import GComponent from './GComponent';
@@ -23,9 +23,7 @@ interface IProps {
   // Editor configurations
   storageManager: IStorageManager;
   blockManager: {};
-  styleManager: {
-    sectors: ISector[];
-  };
+  styleManager: IStyleManager;
 }
 
 function GEditor(props: IProps) {

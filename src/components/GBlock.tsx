@@ -30,14 +30,14 @@ abstract class GBlock {
   /**
    * Block component
    *
-   * @type {Object}
+   * @type {object}
    */
   public component: {};
 
   /**
    * Block attributes
    *
-   * @types {Object}
+   * @types {object}
    */
   public attributes: {};
 
