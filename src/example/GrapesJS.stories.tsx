@@ -1,9 +1,9 @@
 // @flow
 
-import {storiesOf} from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import 'codemirror/theme/monokai.css';
 import 'grapesjs/dist/css/grapes.min.css';
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import CustomBlock from './CustomBlock';
 import EditorMounting from './EditorMounting';
 

@@ -1,7 +1,3 @@
-// @flow
-
-import {ErrorHelper} from 'helpers';
-
 abstract class GComponent {
   /**
    * Component type

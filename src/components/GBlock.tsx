@@ -1,6 +1,6 @@
 // @flow
 
-import {BlockContentType} from '../types/grapes';
+import {BlockContentType} from 'types/grapes';
 
 /**
  * Custom block class

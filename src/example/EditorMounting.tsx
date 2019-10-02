@@ -3,8 +3,8 @@
 import 'antd/dist/antd.min.css';
 import Button from 'antd/lib/button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, {useState} from 'react';
-import GEditor from '../components/GEditor';
+import { GEditor } from 'grapesjs-react';
+import React, { useState } from 'react';
 
 function EditorMounting() {
   const [mounted, setMounted] = useState(true);

@@ -1,8 +1,7 @@
 import 'antd/dist/antd.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { GBlock, GEditor } from 'grapesjs-react';
 import React from 'react';
-import GBlock from '../components/GBlock';
-import GEditor from '../components/GEditor';
 
 class SimpleBlock extends GBlock {
 

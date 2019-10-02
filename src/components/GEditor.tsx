@@ -1,13 +1,11 @@
-// @flow
-
+import GBlock from 'components/GBlock';
 import GrapesJS from 'grapesjs';
 import gjsBasicBlocks from 'grapesjs-blocks-basic';
 import gjsPresetNewsletter from 'grapesjs-preset-newsletter';
 // Presets and Plugins
 import gjsPresetWebpage from 'grapesjs-preset-webpage';
-import React, {useEffect, useState} from 'react';
-import {GrapesPluginType, ISector, IStorageManager, IStyleManager} from '../types/grapes';
-import GBlock from './GBlock';
+import React, { useEffect, useState } from 'react';
+import { GrapesPluginType, IStorageManager, IStyleManager } from 'types/grapes';
 // Components
 import GComponent from './GComponent';
 
