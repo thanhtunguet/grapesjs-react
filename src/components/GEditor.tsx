@@ -22,6 +22,7 @@ interface IProps {
   storageManager: IStorageManager;
   blockManager: {};
   styleManager: IStyleManager;
+  children?: any;
 }
 
 function GEditor(props: IProps) {
@@ -32,7 +33,8 @@ function GEditor(props: IProps) {
     components,
     blocks,
     webpage,
-    newsletter
+    newsletter,
+    children
   } = props;
 
   const [editor, setEditor] = useState(null);
@@ -100,7 +102,7 @@ function GEditor(props: IProps) {
     []
   );
 
-  return <div id={id}/>;
+  return <div id={id}>{children ? children : null}</div>;
 }
 
 GEditor.defaultProps = {
