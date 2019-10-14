@@ -102,7 +102,11 @@ function GEditor(props: IProps) {
     []
   );
 
-  return <div id={id}>{children ? children : null}</div>;
+  return (
+      <div id={id}>
+          {children}
+      </div>
+  );
 }
 
 GEditor.defaultProps = {
