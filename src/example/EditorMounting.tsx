@@ -20,7 +20,7 @@ function EditorMounting() {
           {mounted ? 'Unmount' : 'Mount'}
         </Button>
       </div>
-      <div>{mounted && <GEditor id="geditor" newsletter={true}/>}</div>
+        <div>{mounted && <GEditor id="geditor" newsletter={true}><div>Drag some elements!</div></GEditor>}</div>
     </div>
   );
 }
