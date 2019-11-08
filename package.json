@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-react",
-  "version": "1.0.3",
+  "version": "2.1.0",
   "description": "A React wrapper for GrapesJS library",
   "repository": "https://github.com/thanhtunguet/grapesjs-react",
   "author": {
