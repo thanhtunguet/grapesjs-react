@@ -1,10 +1,8 @@
-export { default as Editor } from './components/GEditor';
-export { default as GEditor } from './components/GEditor';
+export {default as Editor} from './GEditor/GEditor';
+export {default as GEditor} from './GEditor/GEditor';
 
-export { default as Block } from './components/GBlock';
-export { default as GBlock } from './components/GBlock';
+export {default as Block} from './GBlock';
+export {default as GBlock} from './GBlock';
 
-export { default as Component } from './components/GComponent';
-export { default as GComponent } from './components/GComponent';
-
-export * from './types/grapes';
+export {default as Component} from './GComponent';
+export {default as GComponent} from './GComponent';

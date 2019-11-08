@@ -1,6 +1,6 @@
 // @flow
 
-import {BlockContentType} from 'types/grapes';
+export type BlockContentType = string | HTMLElement;
 
 /**
  * Custom block class
@@ -59,7 +59,7 @@ abstract class GBlock {
    */
   public setId = (id: string) => {
     this.id = id;
-  }
+  };
 
   /**
    * Block label setter
@@ -68,7 +68,7 @@ abstract class GBlock {
    */
   public setLabel = (label: string) => {
     this.label = label;
-  }
+  };
 }
 
 export default GBlock;

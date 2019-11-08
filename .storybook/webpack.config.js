@@ -1,11 +1,12 @@
-module.exports = ({ config }) => {
+module.exports = ({config}) => {
+  config.entry = "./.storybook/config.tsx";
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
-    loader: require.resolve('awesome-typescript-loader'),
+    loader: require.resolve("awesome-typescript-loader"),
     options: {
       presets: [
         [
-          'react-app',
+          "react-app",
           {
             flow: false,
             typescript: true,
@@ -14,6 +15,6 @@ module.exports = ({ config }) => {
       ],
     },
   });
-  config.resolve.extensions.push('.ts', '.tsx');
+  config.resolve.extensions.push(".ts", ".tsx");
   return config;
 };

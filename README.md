@@ -2,6 +2,8 @@ GrapesJS React Integration
 ==========================
 _The first integration of GrapesJS for React._
 
+Storybook demo [https://thanhtunguet.github.io/grapesjs-react](https://thanhtunguet.github.io/grapesjs-react)
+
 1. Installation
     ```bash
     yarn add grapesjs-react
@@ -9,7 +11,7 @@ _The first integration of GrapesJS for React._
 
 2. Usage
     Editor:
-    ```javascript
+    ```typescript
     import React, {Component} from 'react';
     import {GEditor} from 'grapesjs-react';
 
@@ -23,22 +25,22 @@ _The first integration of GrapesJS for React._
 
     export default GEditorExample;
     ```
-    
+
     Custom block [src/example/CustomBlock.tsx](https://github.com/thanhtunguet/grapesjs-react/blob/master/src/example/CustomBlock.js):
-    ```javascript
+    ```typescript
     import React from 'react';
-    import {GEditor, GBlock} from 'grapesjs-react';   
+    import {GEditor, GBlock} from 'grapesjs-react';
     import 'antd/dist/antd.min.css';
     import 'bootstrap/dist/css/bootstrap.min.css';
-    
+
     class SimpleBlock extends GBlock {
       content = `<div class="simple-block"> This is a simple block </div>`;
-    
+
       constructor() {
         super('simple-block', 'Simple Block');
       }
     }
-    
+
     function CustomBlock() {
       return (
         <div className="container-fluid">
@@ -50,7 +52,7 @@ _The first integration of GrapesJS for React._
         </div>
       );
     }
-    
+
     export default CustomBlock;
     ```
 3. Options
@@ -60,11 +62,12 @@ _The first integration of GrapesJS for React._
     | components | Custom components       | Array<GComponent>       | Empty         |
     | plugins    | Additional plugins      | Array<GPluginType>      | Empty         |
     | newsletter | Apply newsletter preset | boolean                 | false         |
-    | webpage    | Apply webpage preset    | boolean                 | false         | 
+    | webpage    | Apply webpage preset    | boolean                 | false         |
+    | onInit     | Init event              | (editor: Editor) => void
 
-* This package does not include CSS, so you have to import css from `grapesjs` package manually.
+* This package does not include CSS, you have to import css from `grapesjs` package manually.
 
-    ```javascript
+    ```typescript
     import 'grapesjs/dist/css/grapes.min.css';
     ```
- 
+

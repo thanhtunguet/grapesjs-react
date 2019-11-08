@@ -3,3 +3,4 @@ dist/
 build/
 .idea/
 yarn-error.log
+yarn.lock

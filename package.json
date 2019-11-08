@@ -2,57 +2,57 @@
   "name": "grapesjs-react",
   "version": "2.1.0",
   "description": "A React wrapper for GrapesJS library",
-  "repository": "https://github.com/thanhtunguet/grapesjs-react",
+  "repository": {
+    "url": "https://github.com/thanhtunguet/grapesjs-react",
+    "type": "git"
+  },
   "author": {
     "name": "Thanh Tùng",
-    "email": "ht@thanhtunguet.info"
+    "email": "ht@thanhtunguet.info",
+    "url": "https://thanhtunguet.info"
   },
-  "private": false,
-  "main": "dist/lib.js",
+  "main": "./dist/lib.js",
   "license": "MIT",
+  "private": false,
   "devDependencies": {
     "@storybook/addon-info": "^5.2.1",
     "@storybook/cli": "^5.2.1",
     "@storybook/react": "^5.2.1",
-    "@types/jest": "^24.0.18",
+    "@types/jest": "^24.0.22",
     "@types/node": "^12.7.2",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "@types/storybook__react": "^4.0.2",
-    "antd": "^3.22.0",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "antd": "^3.25.0",
     "awesome-typescript-loader": "^5.2.1",
     "bootstrap": "^4.3.1",
-    "grapesjs-react": "link:./src",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
     "husky": "^1.3.1",
-    "jest": "^24.9.0",
-    "node-sass": "^4.11.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",
     "react-codemirror": "^1.0.0",
     "react-docgen-typescript-loader": "^3.1.1",
     "react-dom": "^16.10.1",
-    "react-scripts": "2.0.4",
-    "style-loader": "^0.23.1",
+    "react-scripts": "^3.2.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
     "tslib": "^1.10.0",
     "tslint": "^5.19.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "grapesjs": "^0.15.3",
+    "grapesjs": "0.15.3",
     "grapesjs-blocks-basic": "^0.1.8",
     "grapesjs-custom-code": "^0.1.1",
     "grapesjs-plugin-ckeditor": "^0.0.9",
     "grapesjs-plugin-forms": "^1.0.1",
     "grapesjs-preset-newsletter": "^0.2.20",
     "grapesjs-preset-webpage": "^0.1.10",
-    "react": "^16.9.0"
+    "react": "^16.9.11"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "yarn lint"
@@ -60,12 +60,11 @@
   },
   "scripts": {
     "postinstall": "npm rebuild node-sass",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "tslint --fix --project .",
-    "storybook": "start-storybook -p 6006",
-    "build:storybook": "build-storybook -c .storybook -o docs/",
+    "lint": "tslint --fix --project ./",
+    "start": "start-storybook -p 6006",
+    "build:site": "build-storybook -c .storybook -o build/",
     "watch": "tsc -w",
-    "build": "tsc"
+    "build:lib": "tsc",
+    "build": "run-p build:site build:lib"
   }
 }
