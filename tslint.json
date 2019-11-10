@@ -27,6 +27,7 @@
       "always",
       "ignore-bound-class-methods"
     ],
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "interface-name": false
   }
 }

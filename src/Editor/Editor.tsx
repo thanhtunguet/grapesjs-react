@@ -1,6 +1,5 @@
-import GrapesJS, {IBlockManager, IEditor, IStorageManager, IStyleManager, PresetType} from 'grapesjs';
-import * as React from 'react';
-import {ReactNode, useEffect} from 'react';
+import GrapesJS, {BlockManager, Editor as GrapesJSEditor, PresetType, StorageManager, StyleManager} from 'grapesjs';
+import React, {ReactNode, useEffect, useState} from 'react';
 import {Block} from '../core/Block';
 import {Component} from '../core/Component';
 import './Editor.scss';
@@ -10,19 +9,21 @@ export interface IEditorProps {
   presetType?: PresetType;
   plugins?: string[];
   children?: ReactNode | ReactNode[];
-  storageManager?: IStorageManager;
-  blockManager?: IBlockManager;
-  styleManager?: IStyleManager;
+  storageManager?: StorageManager;
+  blockManager?: BlockManager;
+  styleManager?: StyleManager;
   width?: string | number;
   height?: string | number;
   components?: Component[];
   blocks?: Block[];
-  onInit?: (editor) => void;
-  onDestroy?: (editor) => void;
+  onInit?: (editor: GrapesJSEditor) => void;
+  onDestroy?: (editor: GrapesJSEditor) => void;
 }
 
 function Editor(props: IEditorProps) {
-  const [editor, setEditor] = React.useState<IEditor>(GrapesJS.editors.find((e) => e.getContainer().id === props.id));
+  const [editor, setEditor] = useState<GrapesJSEditor>(
+    GrapesJS.editors.find((e: GrapesJSEditor) => e.getContainer().id === props.id),
+  );
   const {
     id,
     onInit,

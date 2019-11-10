@@ -1,5 +1,5 @@
-import {ReactNode} from 'react';
+import {createElement} from 'react';
 
-export function processor(obj: ReactNode) {
-  return obj;
+export function processor(obj) {
+  return createElement(obj);
 }

@@ -19,7 +19,7 @@
     "jsx": "react"
   },
   "include": [
-    "src/lib.tsx",
+    "src/grapesjs-react.tsx",
     "package.json"
   ],
   "exclude": [

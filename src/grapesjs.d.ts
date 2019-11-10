@@ -1,98 +1,120 @@
 declare module 'grapesjs' {
-  export interface IBlock {
-    id: string;
-  }
-
-  export interface ISector {
-    name: string;
-    buildProps: string[];
-  }
-
-  export interface IStyleManager {
-    sectors: ISector[];
-  }
-
-  export interface IBlockManager {
-    add(id: string, block: IBlock);
-  }
-
-  export interface IStorageManager {
-    id?: string;
-    type?: string;
-    autosave?: boolean;
-    autoload?: boolean;
-    stepBeforeSave?: number;
-    urlStore?: string;
-    urlLoad?: string;
-    headers?: {
-      [key: string]: any;
-    };
-  }
-
-  export interface IComponent {
-    events?: Event[];
-
-    type?: string;
-
-    model?: IModel;
-
-    view?: IView;
-
-    tagName?: string;
-
-    attributes: { [key: string]: any };
-
-    components?: IComponent[];
-
-    isComponent(element: HTMLElement): boolean;
-  }
-
-  export interface IModel {
-    extend(model: IModel);
-
-    init();
-  }
-
-  export interface IView {
-    extend(view: IView);
-
-    init();
-
-    render();
-
-    onRender();
-  }
-
-  export interface IDomComponents {
-    addType(type: string, component: IComponent);
-
-    getType(type: string): IComponent;
-
-    processor(obj: object): IComponent;
-  }
-
-  export interface ICustomAttributes {
-    badgable: boolean;
-    draggable: boolean;
-    droppable: boolean;
-    editable: boolean;
-    content: string;
-    component: object;
-    'custom-name': string;
-    highlightable: boolean;
-    icon: string;
-    layerable: boolean;
-    open: boolean;
-    removable: boolean;
-    resizable: boolean;
-    script: string;
-  }
 
   export type PresetType = 'webPage' | 'newsletter' | 'mjml';
 
-  export interface IEditor {
-    DomComponent: IDomComponents;
+  export interface Editor {
+    DomComponents: DomComponents;
 
-    BlockManager: IBlockManager;
+    BlockManager: BlockManager;
+
+    StorageManager: StorageManager;
+
+    StyleManager: StyleManager;
+
+    getContainer(): HTMLElement;
+  }
+
+  export interface StyleManager {
+    init();
+  }
+
+  export interface BlockManager {
+    init();
+  }
+
+  export interface StorageManager {
+    init();
+  }
+
+  export interface Model {
+    defaults: any;
+
+    extend(...models: Model[]);
+  }
+
+  export interface View {
+    defaults: any;
+
+    extend(...models: Model[]);
+  }
+
+  export interface Component {
+    model?: Model;
+
+    view?: View;
+
+    type?: string;
+
+    tagName?: string;
+
+    attributes?: { [key: string]: any };
+
+    name?: string;
+
+    removable?: boolean;
+
+    draggable?: boolean;
+
+    droppable?: boolean;
+
+    badgable?: boolean;
+
+    stylable?: boolean;
+
+    'stylable-require': string[];
+
+    unstylable?: boolean;
+
+    'style-signature': string[];
+
+    highlightable?: boolean;
+
+    copyable?: boolean;
+
+    resizable?: boolean;
+
+    editable?: boolean;
+
+    layerable?: boolean;
+
+    selectable?: boolean;
+
+    hoverable?: boolean;
+
+    void?: boolean;
+
+    content?: string;
+
+    icon?: string;
+
+    // tslint:disable-next-line:ban-types
+    script?: string | Function;
+
+    // tslint:disable-next-line:ban-types
+    'script-export': string | Function;
+
+    traits: string[];
+
+    init();
+
+    updated(property: string, value: any, previous: any): void;
+
+    removed();
+
+    is(type: string);
+
+    props(): { [key: string]: any };
+  }
+
+  export interface DomComponents {
+    init();
+
+    addType(type: string, component: Component);
+
+    getType(type: string): Component;
+  }
+
+  export default interface GrapesJS {
+    editors: Editor[];
   }
 }
