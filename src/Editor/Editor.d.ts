@@ -1,4 +1,4 @@
-import { IBlockManager, IStorageManager, IStyleManager, PresetType } from 'grapesjs';
+import { BlockManager, Editor as GrapesJSEditor, PresetType, StorageManager, StyleManager } from 'grapesjs';
 import { ReactNode } from 'react';
 import { Block } from '../core/Block';
 import { Component } from '../core/Component';
@@ -8,15 +8,15 @@ export interface IEditorProps {
     presetType?: PresetType;
     plugins?: string[];
     children?: ReactNode | ReactNode[];
-    storageManager?: IStorageManager;
-    blockManager?: IBlockManager;
-    styleManager?: IStyleManager;
+    storageManager?: StorageManager;
+    blockManager?: BlockManager;
+    styleManager?: StyleManager;
     width?: string | number;
     height?: string | number;
     components?: Component[];
     blocks?: Block[];
-    onInit?: (editor: any) => void;
-    onDestroy?: (editor: any) => void;
+    onInit?: (editor: GrapesJSEditor) => void;
+    onDestroy?: (editor: GrapesJSEditor) => void;
 }
 declare function Editor(props: IEditorProps): JSX.Element;
 declare namespace Editor {
