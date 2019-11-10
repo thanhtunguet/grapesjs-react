@@ -30,7 +30,7 @@ SHA=`git rev-parse --verify HEAD`;
 git clone $REPO dist/
 cd dist/
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-find -maxdepth 1 ! -name .git ! -name . | xargs rm -rf
+find -maxdepth 1 ! -name .git ! -name . ! -name CNAME | xargs rm -rf
 cd ..
 
 # Run our compile script
