@@ -55,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn tslint"
+      "pre-commit": "yarn tslint"
     }
   },
   "dependencies": {
