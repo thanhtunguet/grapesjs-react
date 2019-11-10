@@ -1,42 +1,32 @@
 {
-  "defaultSeverity": "error",
   "extends": [
     "tslint:recommended"
   ],
-  "linterOptions": {
-    "exclude": [
-      "docs/",
-      "dist",
-      "node_modules/",
-      "build/",
-      "README.md"
-    ]
-  },
   "rules": {
-    "semicolon": [
-      true,
-      "always",
-      "ignore-bound-class-methods"
-    ],
-    "trailing-comma": [
-      true,
-      {
-        "singleline": "never",
-        "multiline": "always"
-      }
-    ],
-    "arrow-parens": true,
-    "indent": [
-      true,
-      "spaces",
-      2
-    ],
     "quotemark": [
       true,
       "single",
       "jsx-double"
     ],
-    "no-shadowed-variable": true,
-    "jsx-no-multiline-js": false
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "eofline": true,
+    "object-literal-sort-keys": false,
+    "semicolon": [
+      true,
+      "always",
+      "ignore-bound-class-methods"
+    ],
+    "no-shadowed-variable": false
   }
 }

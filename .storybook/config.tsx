@@ -4,13 +4,13 @@ import Card from 'antd/lib/card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'codemirror/theme/monokai.css';
 import 'grapesjs/dist/css/grapes.min.css';
-import React from 'react';
+import * as React from 'react';
 // automatically import all files ending in GrapesJS.stories.tsx
 const req = require.context('../src', true, /\.stories\.tsx$/);
 
-addDecorator((story) => (
+addDecorator((storyFn) => (
   <Card>
-    {story()}
+    {storyFn()}
   </Card>
 ));
 

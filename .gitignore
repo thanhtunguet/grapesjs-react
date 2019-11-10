@@ -1,6 +1,6 @@
 node_modules/
 dist/
 build/
-.idea/
-yarn-error.log
 yarn.lock
+yarn-error.log
+deploy_key

@@ -1,31 +1,31 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "declaration": true,
-    "isolatedModules": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "jsx": "react",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "baseUrl": ".",
     "typeRoots": [
       "node_modules/@types/"
-    ]
+    ],
+    "declaration": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": false,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": false,
+    "jsx": "react"
   },
   "include": [
-    "src/**/*.{ts,tsx}"
+    "src/lib.tsx",
+    "package.json"
   ],
   "exclude": [
-    "node_modules/",
-    "dist/",
-    "build/",
-    "src/**.{spec,test}.{ts,tsx}"
+    "node_modules",
+    "dist",
+    "build",
+    "src/**/*.{test,spec}.{ts,tsx}"
   ]
 }
