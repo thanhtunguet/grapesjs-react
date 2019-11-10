@@ -50,7 +50,13 @@
     "build:lib": "tsc",
     "start": "start-storybook -p 6006",
     "watch": "tsc -w",
-    "publish": "cd dist && publish"
+    "publish": "cd dist && publish",
+    "tslint": "tslint --fix --project ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn tslint"
+    }
   },
   "dependencies": {
     "grapesjs-preset-newsletter": "^0.2.20",
