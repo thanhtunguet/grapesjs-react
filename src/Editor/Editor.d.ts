@@ -1,14 +1,20 @@
+import { IBlockManager, IStorageManager, IStyleManager, PresetType } from 'grapesjs';
 import { ReactNode } from 'react';
+import { Block } from '../core/Block';
+import { Component } from '../core/Component';
 import './Editor.scss';
 export interface IEditorProps {
     id?: string;
-    presetType?: 'webPage' | 'newsletter' | 'mjml';
+    presetType?: PresetType;
     plugins?: string[];
     children?: ReactNode | ReactNode[];
-    storageManager?: any;
-    blockManager?: any;
-    styleManager?: any;
-    blocks?: any;
+    storageManager?: IStorageManager;
+    blockManager?: IBlockManager;
+    styleManager?: IStyleManager;
+    width?: string | number;
+    height?: string | number;
+    components?: Component[];
+    blocks?: Block[];
     onInit?: (editor: any) => void;
     onDestroy?: (editor: any) => void;
 }
@@ -20,8 +26,11 @@ declare namespace Editor {
         plugins: any[];
         blocks: any[];
         blockManager: {};
-        storageManager: {};
+        storageManager: any;
         styleManager: {};
+        width: string;
+        height: string;
+        components: any[];
     };
     var displayName: string;
     var __docgenInfo: {
@@ -74,6 +83,33 @@ declare namespace Editor {
                 };
             };
             "styleManager": {
+                "defaultValue": any;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "width": {
+                "defaultValue": any;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "height": {
+                "defaultValue": any;
+                "description": string;
+                "name": string;
+                "required": boolean;
+                "type": {
+                    "name": string;
+                };
+            };
+            "components": {
                 "defaultValue": any;
                 "description": string;
                 "name": string;
