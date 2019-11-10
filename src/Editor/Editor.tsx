@@ -1,25 +1,41 @@
-import GrapesJS from 'grapesjs';
+import GrapesJS, {IBlockManager, IEditor, IStorageManager, IStyleManager, PresetType} from 'grapesjs';
 import * as React from 'react';
 import {ReactNode, useEffect} from 'react';
+import {Block} from '../core/Block';
+import {Component} from '../core/Component';
 import './Editor.scss';
 
 export interface IEditorProps {
   id?: string;
-  presetType?: 'webPage' | 'newsletter' | 'mjml';
+  presetType?: PresetType;
   plugins?: string[];
   children?: ReactNode | ReactNode[];
-  storageManager?: any;
-  blockManager?: any;
-  styleManager?: any;
-  blocks?: any;
-
+  storageManager?: IStorageManager;
+  blockManager?: IBlockManager;
+  styleManager?: IStyleManager;
+  width?: string | number;
+  height?: string | number;
+  components?: Component[];
+  blocks?: Block[];
   onInit?: (editor) => void;
   onDestroy?: (editor) => void;
 }
 
 function Editor(props: IEditorProps) {
-  const [editor, setEditor] = React.useState(GrapesJS.editors.find((e) => e.getContainer().id === props.id));
-  const {id, onInit, onDestroy, presetType, blockManager, storageManager, styleManager} = props;
+  const [editor, setEditor] = React.useState<IEditor>(GrapesJS.editors.find((e) => e.getContainer().id === props.id));
+  const {
+    id,
+    onInit,
+    onDestroy,
+    presetType,
+    blockManager,
+    storageManager,
+    styleManager,
+    width,
+    height,
+    components,
+    blocks,
+  } = props;
 
   useEffect(
     () => {
@@ -48,15 +64,45 @@ function Editor(props: IEditorProps) {
         preset
           .then(({default: presetObject}) => {
             const newEditor = GrapesJS.init({
-              fromElement: true,
               container: `#${id}`,
+              fromElement: true,
               blockManager,
               styleManager,
               storageManager,
+              width,
+              height,
               plugins: [
                 presetObject,
                 ...props.plugins,
               ],
+            });
+
+            const defaultType = newEditor.DomComponents.getType('default');
+            const defaultModel = defaultType.model;
+            const defaultView = defaultType.view;
+            components.forEach((component: Component) => {
+              newEditor.DomComponents.addType(
+                component.type,
+                {
+                  model: defaultModel.extend(
+                    {
+                      defaults: Object.assign({}, defaultModel.prototype.defaults),
+                    },
+                    {
+                      isComponent: component.isComponent.bind(this),
+                    },
+                  ),
+                  view: defaultView.extend({
+                    events: {
+                      ...component.events,
+                    },
+                    render: component.render.bind(this),
+                  }),
+                },
+              );
+            });
+            blocks.forEach((block: Block) => {
+              newEditor.BlockManager.add(block.id, block);
             });
 
             setEditor(newEditor);
@@ -73,10 +119,30 @@ function Editor(props: IEditorProps) {
           }
           GrapesJS.editors = GrapesJS.editors.filter((e) => e !== editor);
           editor.destroy();
+          if (document) {
+            const container: HTMLDivElement = document.getElementById(props.id) as HTMLDivElement;
+            if (container) {
+              container.innerHTML = null;
+            }
+          }
         }
       };
     },
-    [editor, id, blockManager, styleManager, storageManager, onInit, presetType, onDestroy, props],
+    [
+      editor,
+      id,
+      blockManager,
+      styleManager,
+      storageManager,
+      onInit,
+      presetType,
+      onDestroy,
+      width,
+      height,
+      blocks,
+      components,
+      props,
+    ],
   );
 
   return (
@@ -92,8 +158,11 @@ Editor.defaultProps = {
   plugins: [],
   blocks: [],
   blockManager: {},
-  storageManager: {},
+  storageManager: null,
   styleManager: {},
+  width: 'auto',
+  height: '100vh',
+  components: [],
 };
 
 export default Editor;

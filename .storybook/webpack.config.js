@@ -1,16 +1,27 @@
 module.exports = ({config}) => {
-  config.module.rules.push({
-    test: /\.(ts|tsx)$/,
-    use: [
+  config.module.rules
+    .push(
       {
-        loader: require.resolve("awesome-typescript-loader"),
+        test: /\.(ts|tsx)$/,
+        use: [
+          {
+            loader: require.resolve("awesome-typescript-loader"),
+          },
+          // Optional
+          {
+            loader: require.resolve("react-docgen-typescript-loader"),
+          },
+        ],
       },
-      // Optional
       {
-        loader: require.resolve("react-docgen-typescript-loader"),
+        test: /\.(md|markdown)$/,
+        use: [
+          "html-loader",
+          "markdown-loader",
+        ],
       },
-    ],
-  });
-  config.resolve.extensions.push(".ts", ".tsx");
+    );
+  config.resolve.extensions
+    .push(".ts", ".tsx");
   return config;
 };
