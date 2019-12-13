@@ -1,28 +1,27 @@
 {
   "files": {
-    "main.css": "/main.css",
-    "main.js": "/main.c75a41a406194bfb0485.bundle.js",
-    "main.css.map": "/main.css.map",
-    "main.js.map": "/main.c75a41a406194bfb0485.bundle.js.map",
-    "runtime~main.js": "/runtime~main.c75a41a406194bfb0485.bundle.js",
-    "runtime~main.js.map": "/runtime~main.c75a41a406194bfb0485.bundle.js.map",
-    "vendors~main.css": "/vendors~main.css",
-    "vendors~main.js": "/vendors~main.c75a41a406194bfb0485.bundle.js",
-    "vendors~main.css.map": "/vendors~main.css.map",
-    "vendors~main.js.map": "/vendors~main.c75a41a406194bfb0485.bundle.js.map",
-    "../dist/.storybook/config.d.ts": "/../dist/.storybook/config.d.ts",
-    "../dist/src/Editor/Editor.d.ts": "/../dist/src/Editor/Editor.d.ts",
-    "../dist/src/Editor/Editor.stories.d.ts": "/../dist/src/Editor/Editor.stories.d.ts",
+    "main.js": "/main.6ebf5f7bfbe549634964.bundle.js",
+    "main.js.map": "/main.6ebf5f7bfbe549634964.bundle.js.map",
+    "runtime~main.js": "/runtime~main.6ebf5f7bfbe549634964.bundle.js",
+    "runtime~main.js.map": "/runtime~main.6ebf5f7bfbe549634964.bundle.js.map",
+    "vendors~main.js": "/vendors~main.6ebf5f7bfbe549634964.bundle.js",
+    "vendors~main.js.map": "/vendors~main.6ebf5f7bfbe549634964.bundle.js.map",
+    "main-fonts.ttf?v=20": "/38b30fa0229248d8bd3a14c802046743.ttf",
+    "main-fonts.woff?v=20": "/638868fe8f33b0b45c29fc4e4fba99a9.woff",
+    "fontawesome-webfont.eot": "/674f50d287a8c48dc19ba404d20fe713.eot",
+    "fontawesome-webfont.svg?v=4.7.0": "/912ec66d7572ff821749319396470bde.svg",
+    "fontawesome-webfont.woff2?v=4.7.0": "/af7ae505a9eed503f8b8e6982036873e.woff2",
+    "fontawesome-webfont.ttf?v=4.7.0": "/b06871f281fee6b241d60582ae9369b9.ttf",
+    "main-fonts.svg?v=20": "/eceff26a5f33cc81123f437a16a78dbe.svg",
+    "main-fonts.eot?v=20": "/f7c56e52c2c44690a0e39d5a486d0c3b.eot",
+    "fontawesome-webfont.woff?v=4.7.0": "/fee66e712a8a08eef5805a46892932ad.woff",
     "iframe.html": "/iframe.html",
-    "precache-manifest.93fc66ce7da6e308548ff5bcec299701.js": "/precache-manifest.93fc66ce7da6e308548ff5bcec299701.js",
-    "service-worker.js": "/service-worker.js",
-    "static/media/Editor.scss": "/static/media/main-fonts.f7c56e52.eot"
+    "precache-manifest.c8fabbe5dc6fec040e819c4131a2b51a.js": "/precache-manifest.c8fabbe5dc6fec040e819c4131a2b51a.js",
+    "service-worker.js": "/service-worker.js"
   },
   "entrypoints": [
-    "runtime~main.c75a41a406194bfb0485.bundle.js",
-    "vendors~main.css",
-    "vendors~main.c75a41a406194bfb0485.bundle.js",
-    "main.css",
-    "main.c75a41a406194bfb0485.bundle.js"
+    "runtime~main.6ebf5f7bfbe549634964.bundle.js",
+    "vendors~main.6ebf5f7bfbe549634964.bundle.js",
+    "main.6ebf5f7bfbe549634964.bundle.js"
   ]
 }
