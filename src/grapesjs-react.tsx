@@ -1,3 +1,3 @@
-export {default as Editor} from './Editor';
+export {default as Editor} from './Editor/Editor';
 
 export * from 'grapesjs';

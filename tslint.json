@@ -29,5 +29,9 @@
     ],
     "no-shadowed-variable": false,
     "interface-name": false
-  }
+  },
+  "rulesDirectory": [
+    "tslint-eslint-rules",
+    "tslint-react"
+  ]
 }
