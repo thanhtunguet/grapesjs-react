@@ -96,7 +96,7 @@ const Editor = React.forwardRef(
           });
           setEditor(newEditor);
           if (onInit) {
-            onInit(editor);
+            onInit(newEditor);
           }
         }
         return handleCleanup;
