@@ -64,7 +64,6 @@
     "grapesjs-mjml": "^0.1.15",
     "grapesjs-preset-newsletter": "^0.2.20",
     "grapesjs-preset-webpage": "^0.1.11",
-    "grapesjs-react": "^2.0.2",
     "react": "^16.12.0"
   }
 }
