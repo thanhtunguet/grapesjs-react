@@ -2,7 +2,7 @@ import GrapesJS from 'grapesjs';
 import mjml from 'grapesjs-mjml';
 import newsletter from 'grapesjs-preset-newsletter';
 import webpage from 'grapesjs-preset-webpage';
-import React, {ReactElement, Ref} from 'react';
+import React from 'react';
 
 const presets = {
   webpage,
@@ -17,7 +17,7 @@ export interface IEditorProps {
 
   plugins?: string[];
 
-  children?: ReactElement<any> | Array<ReactElement<any>>;
+  children?: React.ReactElement<any> | Array<React.ReactElement<any>>;
 
   storageManager?: any;
 
@@ -39,7 +39,7 @@ export interface IEditorProps {
 }
 
 const Editor = React.forwardRef(
-  (props: IEditorProps, ref: Ref<HTMLDivElement>) => {
+  (props: IEditorProps, ref: React.Ref<HTMLDivElement>) => {
     const {
       id,
       onInit,
@@ -50,9 +50,8 @@ const Editor = React.forwardRef(
       styleManager,
       width,
       height,
-      components,
-      blocks,
       children,
+      plugins: propPlugins,
     } = props;
 
     const [editor, setEditor] = React.useState<any>(GrapesJS.editors.find((e: any) => {
@@ -75,7 +74,7 @@ const Editor = React.forwardRef(
           }
         }
       },
-      [editor, onDestroy],
+      [editor, id, onDestroy],
     );
 
     React.useEffect(
@@ -91,7 +90,7 @@ const Editor = React.forwardRef(
             height,
             plugins: [
               presets[presetType],
-              ...props.plugins,
+              ...propPlugins,
             ],
           });
           setEditor(newEditor);
@@ -101,21 +100,8 @@ const Editor = React.forwardRef(
         }
         return handleCleanup;
       },
-      [
-        editor,
-        id,
-        blockManager,
-        styleManager,
-        storageManager,
-        onInit,
-        presetType,
-        onDestroy,
-        width,
-        height,
-        blocks,
-        components,
-        props,
-      ],
+      // tslint:disable-next-line:max-line-length
+      [blockManager, editor, handleCleanup, height, id, onInit, presetType, propPlugins, storageManager, styleManager, width],
     );
 
     return (

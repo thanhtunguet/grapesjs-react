@@ -4,3 +4,4 @@ build/
 yarn.lock
 yarn-error.log
 deploy_key
+.idea/

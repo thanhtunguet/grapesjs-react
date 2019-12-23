@@ -8,6 +8,7 @@
     "alwaysStrict": false,
     "baseUrl": "src",
     "checkJs": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
