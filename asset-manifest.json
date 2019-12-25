@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/main.95471f7d653ee2e8cfc0.bundle.js",
-    "main.js.map": "/main.95471f7d653ee2e8cfc0.bundle.js.map",
-    "runtime~main.js": "/runtime~main.95471f7d653ee2e8cfc0.bundle.js",
-    "runtime~main.js.map": "/runtime~main.95471f7d653ee2e8cfc0.bundle.js.map",
-    "vendors~main.js": "/vendors~main.95471f7d653ee2e8cfc0.bundle.js",
-    "vendors~main.js.map": "/vendors~main.95471f7d653ee2e8cfc0.bundle.js.map",
+    "main.js": "/main.f69a60e28a01104be6f0.bundle.js",
+    "main.js.map": "/main.f69a60e28a01104be6f0.bundle.js.map",
+    "runtime~main.js": "/runtime~main.f69a60e28a01104be6f0.bundle.js",
+    "runtime~main.js.map": "/runtime~main.f69a60e28a01104be6f0.bundle.js.map",
+    "vendors~main.js": "/vendors~main.f69a60e28a01104be6f0.bundle.js",
+    "vendors~main.js.map": "/vendors~main.f69a60e28a01104be6f0.bundle.js.map",
     "../dist/.storybook/config.d.ts": "/../dist/.storybook/config.d.ts",
     "../dist/src/Editor/Editor.d.ts": "/../dist/src/Editor/Editor.d.ts",
     "../dist/src/Editor/Editor.stories.d.ts": "/../dist/src/Editor/Editor.stories.d.ts",
@@ -14,12 +14,12 @@
     "main-fonts.svg?v=20": "/eceff26a5f33cc81123f437a16a78dbe.svg",
     "main-fonts.eot?v=20": "/f7c56e52c2c44690a0e39d5a486d0c3b.eot",
     "iframe.html": "/iframe.html",
-    "precache-manifest.083d349d2aedafc989c4ffd8e48ebaeb.js": "/precache-manifest.083d349d2aedafc989c4ffd8e48ebaeb.js",
+    "precache-manifest.948d728155be3da9b49d6eab0b45a572.js": "/precache-manifest.948d728155be3da9b49d6eab0b45a572.js",
     "service-worker.js": "/service-worker.js"
   },
   "entrypoints": [
-    "runtime~main.95471f7d653ee2e8cfc0.bundle.js",
-    "vendors~main.95471f7d653ee2e8cfc0.bundle.js",
-    "main.95471f7d653ee2e8cfc0.bundle.js"
+    "runtime~main.f69a60e28a01104be6f0.bundle.js",
+    "vendors~main.f69a60e28a01104be6f0.bundle.js",
+    "main.f69a60e28a01104be6f0.bundle.js"
   ]
 }
