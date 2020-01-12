@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as  ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {MemoryRouter} from 'react-router-dom';
 import Editor from './Editor';
 

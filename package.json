@@ -3,8 +3,14 @@
   "version": "3.0.1",
   "description": "React wrapper for GrapesJS",
   "main": "./dist/grapesjs-react.js",
+  "module": "./dist/grapesjs-react.js",
+  "homepage": "https://github.com/thanhtunguet/grapesjs-react/wiki",
   "repository": "https://github.com/thanhtunguet/grapesjs-react",
-  "author": "Thanh Tùng <ht@thanhtunguet.info>",
+  "author": {
+    "name": "Thanh Tùng",
+    "email": "ht@thanhtunguet.info",
+    "url": "https://github.com/thanhtunguet"
+  },
   "license": "MIT",
   "private": false,
   "devDependencies": {
@@ -22,6 +28,7 @@
     "@types/reactstrap": "^8.2.0",
     "@types/source-map-support": "^0.5.0",
     "@types/ts-nameof": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.12.0",
     "antd": "^3.26.2",
     "awesome-typescript-loader": "^5.2.1",
@@ -30,9 +37,9 @@
     "css-loader": "^3.3.2",
     "eslint": "^6.8.0",
     "eslint-config-react-app": "^5.1.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "eslint-plugin-typescript": "^0.14.0",
     "file-loader": "^5.0.2",
     "husky": "^3.1.0",
     "node-sass": "^4.13.0",
@@ -49,7 +56,6 @@
     "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^4.1.0",
     "typescript": "^3.7.3",
-    "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
     "webpack-node-externals": "^1.7.2",
     "webpack-source-map-support": "^2.0.1"
