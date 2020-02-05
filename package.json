@@ -1,8 +1,8 @@
 {
   "name": "grapesjs-react",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "React wrapper for GrapesJS",
-  "main": "./dist/grapesjs-react.js",
+  "main": "./dist/grapesjs-react.cjs.js",
   "module": "./dist/grapesjs-react.js",
   "homepage": "https://github.com/thanhtunguet/grapesjs-react/wiki",
   "repository": "https://github.com/thanhtunguet/grapesjs-react",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@storybook/cli": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "@svgr/rollup": "^5.1.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.3",
     "@types/bootstrap": "^4.3.1",
@@ -28,12 +29,11 @@
     "@types/reactstrap": "^8.2.0",
     "@types/source-map-support": "^0.5.0",
     "@types/ts-nameof": "^4.2.0",
-    "@typescript-eslint/eslint-plugin": "^2.15.0",
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.12.0",
-    "antd": "^3.26.2",
+    "antd": "^3.26.8",
     "awesome-typescript-loader": "^5.2.1",
     "bootstrap": "^4.4.1",
-    "codemirror": "^5.49.2",
     "css-loader": "^3.3.2",
     "eslint": "^6.8.0",
     "eslint-config-react-app": "^5.1.0",
@@ -43,22 +43,25 @@
     "file-loader": "^5.0.2",
     "husky": "^3.1.0",
     "node-sass": "^4.13.0",
-    "react-codemirror2": "^6.0.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.3.0",
     "reactstrap": "^8.2.0",
+    "rollup": "^1.31.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-dts": "^1.2.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-postcss": "^2.0.6",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "rollup-plugin-url": "^3.0.1",
     "sass-loader": "^8.0.0",
     "source-map-support": "^0.5.16",
     "style-loader": "^1.0.1",
     "ts-nameof": "^4.2.2",
     "tslint": "^5.20.1",
-    "tslint-eslint-rules": "^5.4.0",
     "tslint-react": "^4.1.0",
-    "typescript": "^3.7.3",
-    "webpack-cli": "^3.3.10",
-    "webpack-node-externals": "^1.7.2",
-    "webpack-source-map-support": "^2.0.1"
+    "typescript": "^3.7.3"
   },
   "dependencies": {
     "grapesjs": "^0.15.9",
@@ -73,10 +76,11 @@
     }
   },
   "scripts": {
-    "watch:lib": "NODE_ENV=development webpack --watch",
-    "build:lib": "NODE_ENV=production  webpack",
+    "watch:lib": "rollup -c -w",
+    "build:lib": "rollup -c",
     "start": "start-storybook -p 6006",
     "build": "build-storybook -o build/",
-    "lint": "tslint --fix src/**/*.{ts,tsx}"
+    "lint": "tslint --fix src/**/*.{ts,tsx}",
+    "test": "react-scripts test"
   }
 }

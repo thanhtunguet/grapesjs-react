@@ -31,7 +31,6 @@
     "interface-name": false
   },
   "rulesDirectory": [
-    "tslint-eslint-rules",
     "tslint-react"
   ]
 }

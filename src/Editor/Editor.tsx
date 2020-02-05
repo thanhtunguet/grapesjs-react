@@ -2,15 +2,16 @@ import GrapesJS from 'grapesjs';
 import mjml from 'grapesjs-mjml';
 import newsletter from 'grapesjs-preset-newsletter';
 import webpage from 'grapesjs-preset-webpage';
+import 'grapesjs/dist/css/grapes.min.css';
 import React from 'react';
 
-const presets = {
+const presets: any = {
   webpage,
   newsletter,
   mjml,
 };
 
-export interface IEditorProps {
+export interface EditorProps {
   id?: string;
 
   presetType?: 'webpage' | 'newsletter' | 'mjml';
@@ -38,91 +39,93 @@ export interface IEditorProps {
   onDestroy?(editor: any): void;
 }
 
-const Editor = React.forwardRef(
-  (props: IEditorProps, ref: React.Ref<HTMLDivElement>) => {
+interface EditorState {
+  editor: any;
+}
+
+class Editor extends React.Component<EditorProps, EditorState> {
+  public static defaultProps: EditorProps = {
+    id: 'grapesjs-react-editor',
+    presetType: 'newsletter',
+    plugins: [],
+    blocks: [],
+    blockManager: {},
+    storageManager: {},
+    styleManager: {},
+    width: 'auto',
+    height: '100vh',
+    components: [],
+  };
+
+  public componentDidMount(): void {
     const {
-      id,
       onInit,
-      onDestroy,
-      presetType,
+      id,
       blockManager,
-      storageManager,
       styleManager,
+      storageManager,
       width,
       height,
-      children,
       plugins: propPlugins,
-    } = props;
+      presetType,
+    } = this.props;
 
-    const [editor, setEditor] = React.useState<any>(GrapesJS.editors.find((e: any) => {
-      return e.getContainer().id === id;
-    }));
+    const editor = GrapesJS.init({
+      container: `#${id}`,
+      fromElement: true,
+      blockManager,
+      styleManager,
+      storageManager,
+      width,
+      height,
+      plugins: [
+        presets[presetType],
+        ...propPlugins,
+      ],
+    });
 
-    const handleCleanup = React.useCallback(
-      () => {
-        if (editor) {
-          if (onDestroy) {
-            onDestroy(editor);
-          }
-          GrapesJS.editors = GrapesJS.editors.filter((e: any) => e !== editor);
-          editor.destroy();
-          if (document) {
-            const container: HTMLDivElement = document.getElementById(id) as HTMLDivElement;
-            if (container) {
-              container.innerHTML = '';
-            }
-          }
+    if (typeof onInit === 'function') {
+      onInit(editor);
+    }
+
+    this.setState({
+      editor,
+    });
+  }
+
+  public componentWillUnmount(): void {
+    const {editor} = this.state;
+    const {
+      onDestroy,
+      id,
+    } = this.props;
+    if (editor) {
+      if (typeof onDestroy === 'function') {
+        onDestroy(editor);
+      }
+      GrapesJS.editors = GrapesJS.editors.filter((e: any) => e !== editor);
+      editor.destroy();
+      if (document) {
+        const container: HTMLDivElement = document.getElementById(id) as HTMLDivElement;
+        if (container) {
+          container.innerHTML = '';
         }
-      },
-      [editor, id, onDestroy],
-    );
+      }
+    }
+  }
 
-    React.useEffect(
-      () => {
-        if (!editor) {
-          const newEditor = GrapesJS.init({
-            container: `#${id}`,
-            fromElement: true,
-            blockManager,
-            styleManager,
-            storageManager,
-            width,
-            height,
-            plugins: [
-              presets[presetType],
-              ...propPlugins,
-            ],
-          });
-          setEditor(newEditor);
-          if (onInit) {
-            onInit(newEditor);
-          }
-        }
-        return handleCleanup;
-      },
-      // tslint:disable-next-line:max-line-length
-      [blockManager, editor, handleCleanup, height, id, onInit, presetType, propPlugins, storageManager, styleManager, width],
-    );
+  public render() {
+    const {
+      children,
+      id,
+    } = this.props;
 
     return (
-      <div id={id} ref={ref}>
+      <div id={id}>
         {children}
       </div>
     );
-  },
-);
-
-Editor.defaultProps = {
-  id: 'grapesjs-react-editor',
-  presetType: 'newsletter',
-  plugins: [],
-  blocks: [],
-  blockManager: {},
-  storageManager: {},
-  styleManager: {},
-  width: 'auto',
-  height: '100vh',
-  components: [],
-};
+  }
+}
 
 export default Editor;
