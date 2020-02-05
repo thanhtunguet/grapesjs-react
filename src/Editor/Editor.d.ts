@@ -1,5 +1,6 @@
+import 'grapesjs/dist/css/grapes.min.css';
 import React from 'react';
-export interface IEditorProps {
+export interface EditorProps {
     id?: string;
     presetType?: 'webpage' | 'newsletter' | 'mjml';
     plugins?: string[];
@@ -14,5 +15,13 @@ export interface IEditorProps {
     onInit?(editor: any): void;
     onDestroy?(editor: any): void;
 }
-declare const Editor: React.ForwardRefExoticComponent<IEditorProps & React.RefAttributes<HTMLDivElement>>;
+interface EditorState {
+    editor: any;
+}
+declare class Editor extends React.Component<EditorProps, EditorState> {
+    static defaultProps: EditorProps;
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    render(): JSX.Element;
+}
 export default Editor;
