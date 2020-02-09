@@ -2,7 +2,6 @@ import GrapesJS from 'grapesjs';
 import mjml from 'grapesjs-mjml';
 import newsletter from 'grapesjs-preset-newsletter';
 import webpage from 'grapesjs-preset-webpage';
-import 'grapesjs/dist/css/grapes.min.css';
 import React from 'react';
 
 const presets: any = {

@@ -1,3 +1,16 @@
 node_modules/
 .gitignore
 src/
+.github
+.npmignore
+.storybook/
+scripts/
+.travis.yml
+deploy_key.enc
+rollup.config.js
+yarn.lock
+tslint.json
+tsconfig.json
+CNAME
+.eslintrc
+.editorconfig
