@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/thanhtunguet/grapesjs-react/wiki/main.b9fb0264208dcfc3f530.bundle.js",
-    "main.js.map": "/thanhtunguet/grapesjs-react/wiki/main.b9fb0264208dcfc3f530.bundle.js.map",
-    "runtime~main.js": "/thanhtunguet/grapesjs-react/wiki/runtime~main.b9fb0264208dcfc3f530.bundle.js",
-    "runtime~main.js.map": "/thanhtunguet/grapesjs-react/wiki/runtime~main.b9fb0264208dcfc3f530.bundle.js.map",
-    "vendors~main.js": "/thanhtunguet/grapesjs-react/wiki/vendors~main.b9fb0264208dcfc3f530.bundle.js",
-    "vendors~main.js.map": "/thanhtunguet/grapesjs-react/wiki/vendors~main.b9fb0264208dcfc3f530.bundle.js.map",
+    "main.js": "/thanhtunguet/grapesjs-react/wiki/main.0da1bb19db19c5e99de3.bundle.js",
+    "main.js.map": "/thanhtunguet/grapesjs-react/wiki/main.0da1bb19db19c5e99de3.bundle.js.map",
+    "runtime~main.js": "/thanhtunguet/grapesjs-react/wiki/runtime~main.0da1bb19db19c5e99de3.bundle.js",
+    "runtime~main.js.map": "/thanhtunguet/grapesjs-react/wiki/runtime~main.0da1bb19db19c5e99de3.bundle.js.map",
+    "vendors~main.js": "/thanhtunguet/grapesjs-react/wiki/vendors~main.0da1bb19db19c5e99de3.bundle.js",
+    "vendors~main.js.map": "/thanhtunguet/grapesjs-react/wiki/vendors~main.0da1bb19db19c5e99de3.bundle.js.map",
     "../dist/.storybook/config.d.ts": "/thanhtunguet/grapesjs-react/wiki/../dist/.storybook/config.d.ts",
     "../dist/src/Editor/Editor.d.ts": "/thanhtunguet/grapesjs-react/wiki/../dist/src/Editor/Editor.d.ts",
     "../dist/src/Editor/Editor.stories.d.ts": "/thanhtunguet/grapesjs-react/wiki/../dist/src/Editor/Editor.stories.d.ts",
@@ -14,12 +14,12 @@
     "main-fonts.svg?v=20": "/thanhtunguet/grapesjs-react/wiki/eceff26a5f33cc81123f437a16a78dbe.svg",
     "main-fonts.eot?v=20": "/thanhtunguet/grapesjs-react/wiki/f7c56e52c2c44690a0e39d5a486d0c3b.eot",
     "iframe.html": "/thanhtunguet/grapesjs-react/wiki/iframe.html",
-    "precache-manifest.9a0da458e9bb5d28da84a2d5efd637c5.js": "/thanhtunguet/grapesjs-react/wiki/precache-manifest.9a0da458e9bb5d28da84a2d5efd637c5.js",
+    "precache-manifest.546624cd285adfeb76d3605b6c44bb21.js": "/thanhtunguet/grapesjs-react/wiki/precache-manifest.546624cd285adfeb76d3605b6c44bb21.js",
     "service-worker.js": "/thanhtunguet/grapesjs-react/wiki/service-worker.js"
   },
   "entrypoints": [
-    "runtime~main.b9fb0264208dcfc3f530.bundle.js",
-    "vendors~main.b9fb0264208dcfc3f530.bundle.js",
-    "main.b9fb0264208dcfc3f530.bundle.js"
+    "runtime~main.0da1bb19db19c5e99de3.bundle.js",
+    "vendors~main.0da1bb19db19c5e99de3.bundle.js",
+    "main.0da1bb19db19c5e99de3.bundle.js"
   ]
 }

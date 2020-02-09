@@ -1,4 +1,3 @@
-import 'grapesjs/dist/css/grapes.min.css';
 import React from 'react';
 export interface EditorProps {
     id?: string;
