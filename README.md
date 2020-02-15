@@ -8,70 +8,73 @@ _React wrapper for GrapesJS_
 - To be simple, this package should only control the lifecycle of the editor, leave the rest to the dependent projects.
 
 ### Install
-    ```bash
-    yarn add grapesjs-react
-   ```
-   or
-   ```bash
-    npm i grapesjs-react --save
-   ```
+```bash
+yarn add grapesjs-react
+// or
+npm i grapesjs-react --save
+```
 
 ### New editor props:
-    ```typescript
-    export interface EditorProps {
-      id?: string;
+```typescript
+export interface EditorProps {
+  // Prefix identifier that will be used inside storing and loading
+  id?: string;
     
-      presetType?: 'webpage' | 'newsletter' | 'mjml';
+  presetType?: 'webpage' | 'newsletter' | 'mjml';
+  
+  // https://grapesjs.com/docs/modules/Plugins.html#basic-plugin
+  plugins?: string[];
     
-      plugins?: string[];
+  children?: ReactElement<any> | Array<ReactElement<any>>;
+   
+  // https://github.com/artf/grapesjs/blob/dev/src/storage_manager/config/config.js
+  storageManager?: any;
+  
+  // https://github.com/artf/grapesjs/blob/dev/src/block_manager/config/config.js
+  blockManager?: any;
     
-      children?: ReactElement<any> | Array<ReactElement<any>>;
+  // https://github.com/artf/grapesjs/blob/dev/src/style_manager/config/config.js  
+  styleManager?: {};
     
-      storageManager?: any;
+  width?: string | number;
     
-      blockManager?: any;
+  height?: string | number;
+  
+  // https://grapesjs.com/docs/modules/Components.html
+  components?: object[];
     
-      styleManager?: {};
+  blocks?: object[];
     
-      width?: string | number;
+  onInit?(editor): void;
     
-      height?: string | number;
-    
-      components?: object[];
-    
-      blocks?: object[];
-    
-      onInit?(editor): void;
-    
-      onDestroy?(editor): void;
-    }
-    ```
+  onDestroy?(editor): void;
+}
+ ```
 
 ### Default props of the editor:
 
-    ```typescript
-    Editor.defaultProps = {
-      id: 'grapesjs-react-editor',
-      presetType: 'newsletter',
-      plugins: [],
-      blocks: [],
-      blockManager: {},
-      storageManager: {},
-      styleManager: {},
-      width: 'auto',
-      height: '100vh',
-      components: [],
-    };
-    ```
-<br>
+```typescript
+Editor.defaultProps = {
+  id: 'grapesjs-react-editor',
+  presetType: 'newsletter',
+  plugins: [],
+  blocks: [],
+  blockManager: {},
+  storageManager: {},
+  styleManager: {},
+  width: 'auto',
+  height: '100vh',
+  components: [],
+};
+```
 
 ### Introduce new hooks:
-    - `onInit`: Called after editor initializing, used for adding custom components, blocks, etc, ...
-    - `onDestroy`: Called before editor unmounting, used for cleaning up.
+  - `onInit`: Called after editor initializing, used for adding custom components, blocks, etc, ...
+  - `onDestroy`: Called before editor unmounting, used for cleaning up.
 
 ### Import CSS:
-    ```typescript
-    import 'grapesjs/dist/css/grapes.min.css';
-    ```
+```typescript
+import 'grapesjs/dist/css/grapes.min.css';
+```
 
 See storybook demo: [https://grapesjs-react.thanhtunguet.info](https://grapesjs-react.thanhtunguet.info)
