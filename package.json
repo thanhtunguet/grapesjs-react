@@ -4,6 +4,7 @@
   "description": "React wrapper for GrapesJS",
   "main": "./dist/grapesjs-react.cjs.js",
   "module": "./dist/grapesjs-react.js",
+  "types": "./dist/grapejs-react.d.ts",
   "homepage": "https://github.com/thanhtunguet/grapesjs-react/wiki",
   "repository": "https://github.com/thanhtunguet/grapesjs-react",
   "author": {
