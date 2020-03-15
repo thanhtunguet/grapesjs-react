@@ -37,10 +37,14 @@
     "bootstrap": "^4.4.1",
     "css-loader": "^3.3.2",
     "eslint": "^6.8.0",
-    "eslint-config-react-app": "^5.1.0",
+    "eslint-config-react-app": "^5.2.0",
+    "eslint-config-standard": "^14.1.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-standard": "^4.0.1",
     "file-loader": "^5.0.2",
     "husky": "^3.1.0",
     "node-sass": "^4.13.0",
@@ -79,9 +83,11 @@
   "scripts": {
     "watch:lib": "rollup -c -w",
     "build:lib": "rollup -c",
+    "postbuild:lib": "cp src/*.d.ts dist/",
     "start": "start-storybook -p 6006",
     "build": "build-storybook -o build/",
-    "lint": "tslint --fix src/**/*.{ts,tsx}",
-    "test": "react-scripts test"
+    "lint": "tslint --fix src/**/*.{ts,tsx} && eslint --fix src/**/*",
+    "test": "react-scripts test",
+    "test:ci": "CI=true react-scripts test --watchAll=false"
   }
 }

@@ -1,4 +1,4 @@
-import {storiesOf} from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 import Button from 'antd/lib/button';
 import * as React from 'react';
 import Editor from './Editor';

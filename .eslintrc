@@ -6,11 +6,25 @@
     "jsx-a11y"
   ],
   "extends": [
-    "eslint:recommended"
+    "eslint:recommended",
+    "react-app",
+    "standard"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "error"
+    "react-hooks/exhaustive-deps": "error",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "space-before-function-paren": [
+      "error",
+      "never"
+    ]
   },
   "parserOptions": {
     "ecmaVersion": 6,

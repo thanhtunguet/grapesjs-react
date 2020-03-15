@@ -93,7 +93,7 @@ class Editor extends React.Component<EditorProps, EditorState> {
   }
 
   public componentWillUnmount(): void {
-    const {editor} = this.state;
+    const { editor } = this.state;
     const {
       onDestroy,
       id,
