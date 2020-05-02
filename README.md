@@ -3,6 +3,8 @@ grapesjs-react
 
 _React wrapper for GrapesJS_
 
+I am looking for [new maintainer](https://github.com/thanhtunguet/grapesjs-react/issues/35) for this package.
+
 `grapesjs-react` v3 was fully rewritten from scratch. The package is now only responsible to expose hooks and control the editor lifecycle for these reasons:
 - This package depends on `artf/grapesjs`, which does not support Typescript. It is hard to implement custom features Components, Blocks without declaration files.
 - To be simple, this package should only control the lifecycle of the editor, leave the rest to the dependent projects.
