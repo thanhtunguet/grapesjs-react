@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "/thanhtunguet/grapesjs-react/wiki/main.95cfaae8d055a116650f.bundle.js",
+    "main.js.map": "/thanhtunguet/grapesjs-react/wiki/main.95cfaae8d055a116650f.bundle.js.map",
+    "runtime~main.js": "/thanhtunguet/grapesjs-react/wiki/runtime~main.95cfaae8d055a116650f.bundle.js",
+    "runtime~main.js.map": "/thanhtunguet/grapesjs-react/wiki/runtime~main.95cfaae8d055a116650f.bundle.js.map",
+    "vendors~main.js": "/thanhtunguet/grapesjs-react/wiki/vendors~main.95cfaae8d055a116650f.bundle.js",
+    "vendors~main.js.map": "/thanhtunguet/grapesjs-react/wiki/vendors~main.95cfaae8d055a116650f.bundle.js.map",
+    "../dist/.storybook/config.d.ts": "/thanhtunguet/grapesjs-react/wiki/../dist/.storybook/config.d.ts",
+    "../dist/src/Editor/Editor.d.ts": "/thanhtunguet/grapesjs-react/wiki/../dist/src/Editor/Editor.d.ts",
+    "../dist/src/Editor/Editor.stories.d.ts": "/thanhtunguet/grapesjs-react/wiki/../dist/src/Editor/Editor.stories.d.ts",
+    "main-fonts.ttf?v=20": "/thanhtunguet/grapesjs-react/wiki/38b30fa0229248d8bd3a14c802046743.ttf",
+    "main-fonts.woff?v=20": "/thanhtunguet/grapesjs-react/wiki/638868fe8f33b0b45c29fc4e4fba99a9.woff",
+    "main-fonts.svg?v=20": "/thanhtunguet/grapesjs-react/wiki/eceff26a5f33cc81123f437a16a78dbe.svg",
+    "main-fonts.eot?v=20": "/thanhtunguet/grapesjs-react/wiki/f7c56e52c2c44690a0e39d5a486d0c3b.eot",
+    "iframe.html": "/thanhtunguet/grapesjs-react/wiki/iframe.html",
+    "precache-manifest.19ab1ce736e8ca735e83bcb3060c9188.js": "/thanhtunguet/grapesjs-react/wiki/precache-manifest.19ab1ce736e8ca735e83bcb3060c9188.js",
+    "service-worker.js": "/thanhtunguet/grapesjs-react/wiki/service-worker.js",
+    "vendors~main.95cfaae8d055a116650f.bundle.js.LICENSE.txt": "/thanhtunguet/grapesjs-react/wiki/vendors~main.95cfaae8d055a116650f.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.95cfaae8d055a116650f.bundle.js",
+    "vendors~main.95cfaae8d055a116650f.bundle.js",
+    "main.95cfaae8d055a116650f.bundle.js"
+  ]
+}
