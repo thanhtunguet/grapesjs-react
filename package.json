@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-react",
-  "version": "3.0.4",
+  "version": "3.1.1",
   "description": "React wrapper for GrapesJS",
   "main": "./grapesjs-react.cjs.js",
   "module": "./grapesjs-react.js",
@@ -15,9 +15,10 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "watch:lib": "rollup -c -w",
-    "build:lib": "rollup -c",
-    "postbuild:lib": "cp src/*.d.ts dist/",
+    "watch:lib": "tsc -w",
+    "build:lib": "tsc",
+    "prebuild:lib": "rm -rf dist/",
+    "postbuild:lib": "cp package.json README.md src/*.d.ts dist/",
     "start": "start-storybook -p 6006",
     "build": "build-storybook -o build/",
     "lint": "tslint --fix src/**/*.{ts,tsx} && eslint --fix src/**/*",
