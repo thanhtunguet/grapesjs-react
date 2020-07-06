@@ -1,23 +1,23 @@
-import GrapesJS from 'grapesjs';
+import GrapesJS, {Editor as IEditor} from 'grapesjs';
 import mjml from 'grapesjs-mjml';
 import newsletter from 'grapesjs-preset-newsletter';
 import webpage from 'grapesjs-preset-webpage';
-import React from 'react';
+import React, {PropsWithChildren} from 'react';
 
-const presets: any = {
+export type SupportedPresetType = 'webpage' | 'newsletter' | 'mjml';
+
+const presets: Record<SupportedPresetType, any> = {
   webpage,
   newsletter,
   mjml,
 };
 
 export interface EditorProps {
-  id?: string;
+  id: string;
 
-  presetType?: 'webpage' | 'newsletter' | 'mjml';
+  presetType?: SupportedPresetType;
 
   plugins?: string[];
-
-  children?: React.ReactElement<any> | Array<React.ReactElement<any>>;
 
   storageManager?: any;
 
@@ -33,30 +33,13 @@ export interface EditorProps {
 
   blocks?: object[];
 
-  onInit?(editor: any): void;
+  onInit?(editor: IEditor): void;
 
-  onDestroy?(editor: any): void;
+  onDestroy?(editor: IEditor): void;
 }
 
-interface EditorState {
-  editor: any;
-}
-
-class Editor extends React.Component<EditorProps, EditorState> {
-  public static defaultProps: EditorProps = {
-    id: 'grapesjs-react-editor',
-    presetType: 'newsletter',
-    plugins: [],
-    blocks: [],
-    blockManager: {},
-    storageManager: {},
-    styleManager: {},
-    width: 'auto',
-    height: '100vh',
-    components: [],
-  };
-
-  public componentDidMount(): void {
+const Editor = React.forwardRef<IEditor | null, PropsWithChildren<EditorProps>>(
+  (props, ref) => {
     const {
       onInit,
       id,
@@ -67,64 +50,76 @@ class Editor extends React.Component<EditorProps, EditorState> {
       height,
       plugins: propPlugins,
       presetType,
-    } = this.props;
-
-    const editor = GrapesJS.init({
-      container: `#${id}`,
-      fromElement: true,
-      blockManager,
-      styleManager,
-      storageManager,
-      width,
-      height,
-      plugins: [
-        presets[presetType],
-        ...propPlugins,
-      ],
-    });
-
-    if (typeof onInit === 'function') {
-      onInit(editor);
-    }
-
-    this.setState({
-      editor,
-    });
-  }
-
-  public componentWillUnmount(): void {
-    const { editor } = this.state;
-    const {
-      onDestroy,
-      id,
-    } = this.props;
-    if (editor) {
-      if (typeof onDestroy === 'function') {
-        onDestroy(editor);
-      }
-      GrapesJS.editors = GrapesJS.editors.filter((e: any) => e !== editor);
-      editor.destroy();
-      if (document) {
-        const container: HTMLDivElement = document.getElementById(id) as HTMLDivElement;
-        if (container) {
-          container.innerHTML = '';
-        }
-      }
-    }
-  }
-
-  public render() {
-    const {
       children,
-      id,
-    } = this.props;
+      onDestroy,
+    } = props;
+
+    const [editor, setEditor] = React.useState<IEditor | null>(null);
+
+    React.useEffect(
+      () => {
+        const editor = GrapesJS.init({
+          container: `#${id}`,
+          fromElement: true,
+          blockManager,
+          styleManager,
+          storageManager,
+          width,
+          height,
+          plugins: [
+            presets[presetType],
+            ...propPlugins,
+          ],
+        });
+        if (typeof onInit === 'function') {
+          onInit(editor);
+        }
+        setEditor(editor);
+
+        return function cleanup() {
+          if (editor) {
+            if (typeof onDestroy === 'function') {
+              onDestroy(editor);
+            }
+            GrapesJS.editors = GrapesJS.editors.filter((e: any) => e !== editor);
+            editor.destroy();
+            if (document) {
+              const container: HTMLDivElement = document.getElementById(id) as HTMLDivElement;
+              if (container) {
+                container.innerHTML = '';
+              }
+            }
+          }
+        };
+      },
+      [blockManager, height, id, onDestroy, onInit, presetType, propPlugins, storageManager, styleManager, width],
+    );
+
+    React.useImperativeHandle(ref, () => {
+      return editor;
+    });
 
     return (
       <div id={id}>
         {children}
       </div>
     );
-  }
-}
+  },
+);
+
+Editor.defaultProps = {
+  id: 'grapesjs-react-editor',
+  presetType: 'newsletter',
+  plugins: [],
+  blocks: [],
+  blockManager: {},
+  storageManager: {},
+  styleManager: {},
+  width: 'auto',
+  height: '100vh',
+  components: [],
+};
 
 export default Editor;
+
+(window as any).GrapesJS = GrapesJS;

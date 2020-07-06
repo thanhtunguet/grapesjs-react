@@ -1,14 +1,15 @@
-import * as React from 'react';
-import * as  ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {MemoryRouter} from 'react-router-dom';
-import Editor from './Editor';
 
-describe('Editor', () => {
+import MJMLEditor from './MJMLEditor';
+
+describe('MJMLEditor', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
       <MemoryRouter>
-        <Editor id="test"/>
+        <MJMLEditor/>
       </MemoryRouter>,
       div,
     );

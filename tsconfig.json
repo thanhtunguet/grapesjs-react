@@ -16,12 +16,12 @@
     "isolatedModules": true,
     "jsx": "react",
     "lib": [
-      "dom",
-      "esnext"
+      "DOM",
+      "ESNext"
     ],
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "noEmit": true,
+    "noEmit": false,
     "noImplicitReturns": true,
     "noImplicitThis": false,
     "noUnusedLocals": true,
@@ -32,19 +32,26 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "strict": true,
+    "strictBindCallApply": true,
     "strictNullChecks": false,
-    "target": "es5",
+    "strictPropertyInitialization": false,
+    "target": "ES5",
     "typeRoots": [
       "node_modules/@types/"
-    ],
-    "strict": true
+    ]
   },
   "exclude": [
     "build/",
     "dist/",
-    "node_modules/"
+    "node_modules/",
+    "src/stories/",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/setupTests.ts",
+    ".eslintrc.js"
   ],
   "include": [
-    "src/grapesjs-react.tsx"
+    "src/"
   ]
 }

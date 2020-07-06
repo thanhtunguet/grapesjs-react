@@ -1,38 +1,6 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "outDir": "build",
-    "rootDirs": [
-      "src"
-    ],
-    "sourceMap": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "es5"
-  },
-  "exclude": [
-    "build",
-    "node_modules",
-    "scripts"
-  ],
-  "include": [
-    "src/"
-  ]
+    "noEmit": true
+  }
 }

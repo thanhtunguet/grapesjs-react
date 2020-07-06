@@ -1,7 +1,9 @@
-node_modules/
-dist/
+.idea/
+.vscode/
+
 build/
+dist/
+deploy_key
+node_modules/
 yarn.lock
 yarn-error.log
-deploy_key
-.idea/
