@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/thanhtunguet/grapesjs-react/wiki/static/css/main.3b84d77a.chunk.css",
-    "main.js": "/thanhtunguet/grapesjs-react/wiki/main.1274f950f124fc152af4.bundle.js",
+    "main.js": "/thanhtunguet/grapesjs-react/wiki/main.80fa0e3338d32e6bf639.bundle.js",
     "main.css.map": "/thanhtunguet/grapesjs-react/wiki/static/css/main.3b84d77a.chunk.css.map",
-    "main.js.map": "/thanhtunguet/grapesjs-react/wiki/main.1274f950f124fc152af4.bundle.js.map",
-    "runtime~main.js": "/thanhtunguet/grapesjs-react/wiki/runtime~main.1274f950f124fc152af4.bundle.js",
-    "runtime~main.js.map": "/thanhtunguet/grapesjs-react/wiki/runtime~main.1274f950f124fc152af4.bundle.js.map",
-    "vendors~main.css": "/thanhtunguet/grapesjs-react/wiki/static/css/vendors~main.e59f1e77.chunk.css",
-    "vendors~main.js": "/thanhtunguet/grapesjs-react/wiki/vendors~main.1274f950f124fc152af4.bundle.js",
-    "vendors~main.css.map": "/thanhtunguet/grapesjs-react/wiki/static/css/vendors~main.e59f1e77.chunk.css.map",
-    "vendors~main.js.map": "/thanhtunguet/grapesjs-react/wiki/vendors~main.1274f950f124fc152af4.bundle.js.map",
+    "main.js.map": "/thanhtunguet/grapesjs-react/wiki/main.80fa0e3338d32e6bf639.bundle.js.map",
+    "runtime~main.js": "/thanhtunguet/grapesjs-react/wiki/runtime~main.80fa0e3338d32e6bf639.bundle.js",
+    "runtime~main.js.map": "/thanhtunguet/grapesjs-react/wiki/runtime~main.80fa0e3338d32e6bf639.bundle.js.map",
+    "vendors~main.css": "/thanhtunguet/grapesjs-react/wiki/static/css/vendors~main.7a4bb002.chunk.css",
+    "vendors~main.js": "/thanhtunguet/grapesjs-react/wiki/vendors~main.80fa0e3338d32e6bf639.bundle.js",
+    "vendors~main.css.map": "/thanhtunguet/grapesjs-react/wiki/static/css/vendors~main.7a4bb002.chunk.css.map",
+    "vendors~main.js.map": "/thanhtunguet/grapesjs-react/wiki/vendors~main.80fa0e3338d32e6bf639.bundle.js.map",
     "iframe.html": "/thanhtunguet/grapesjs-react/wiki/iframe.html",
-    "precache-manifest.da1118d4f7630e048dd51150e58067ce.js": "/thanhtunguet/grapesjs-react/wiki/precache-manifest.da1118d4f7630e048dd51150e58067ce.js",
+    "precache-manifest.34d20d479d81111960431cfd5f9531eb.js": "/thanhtunguet/grapesjs-react/wiki/precache-manifest.34d20d479d81111960431cfd5f9531eb.js",
     "service-worker.js": "/thanhtunguet/grapesjs-react/wiki/service-worker.js",
     "static/media/style.scss": "/thanhtunguet/grapesjs-react/wiki/static/media/main-fonts.f7c56e52.eot",
-    "vendors~main.1274f950f124fc152af4.bundle.js.LICENSE.txt": "/thanhtunguet/grapesjs-react/wiki/vendors~main.1274f950f124fc152af4.bundle.js.LICENSE.txt"
+    "vendors~main.80fa0e3338d32e6bf639.bundle.js.LICENSE.txt": "/thanhtunguet/grapesjs-react/wiki/vendors~main.80fa0e3338d32e6bf639.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.1274f950f124fc152af4.bundle.js",
-    "static/css/vendors~main.e59f1e77.chunk.css",
-    "vendors~main.1274f950f124fc152af4.bundle.js",
+    "runtime~main.80fa0e3338d32e6bf639.bundle.js",
+    "static/css/vendors~main.7a4bb002.chunk.css",
+    "vendors~main.80fa0e3338d32e6bf639.bundle.js",
     "static/css/main.3b84d77a.chunk.css",
-    "main.1274f950f124fc152af4.bundle.js"
+    "main.80fa0e3338d32e6bf639.bundle.js"
   ]
 }
