@@ -36,6 +36,8 @@ export interface EditorProps {
   onInit?(editor: IEditor): void;
 
   onDestroy?(editor: IEditor): void;
+
+  extraConfig?: Object;
 }
 
 const Editor = React.forwardRef<IEditor | null, PropsWithChildren<EditorProps>>(
@@ -52,6 +54,7 @@ const Editor = React.forwardRef<IEditor | null, PropsWithChildren<EditorProps>>(
       presetType,
       children,
       onDestroy,
+      extraConfig,
     } = props;
 
     const [editor, setEditor] = React.useState<IEditor | null>(null);
@@ -70,6 +73,7 @@ const Editor = React.forwardRef<IEditor | null, PropsWithChildren<EditorProps>>(
             presets[presetType],
             ...propPlugins,
           ],
+          ...extraConfig
         });
         if (typeof onInit === 'function') {
           onInit(editor);
@@ -92,7 +96,7 @@ const Editor = React.forwardRef<IEditor | null, PropsWithChildren<EditorProps>>(
           }
         };
       },
-      [blockManager, height, id, onDestroy, onInit, presetType, propPlugins, storageManager, styleManager, width],
+      [blockManager, height, id, onDestroy, onInit, presetType, propPlugins, storageManager, styleManager, width, extraConfig],
     );
 
     React.useImperativeHandle(ref, () => {
