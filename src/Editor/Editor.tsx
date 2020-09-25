@@ -122,6 +122,7 @@ Editor.defaultProps = {
   width: 'auto',
   height: '100vh',
   components: [],
+  extraConfig: {}
 };
 
 export default Editor;
