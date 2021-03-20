@@ -48,6 +48,8 @@ export interface EditorProps {
   onInit?(editor): void;
     
   onDestroy?(editor): void;
+
+  extraConfig?: object
 }
  ```
 
@@ -65,6 +67,7 @@ Editor.defaultProps = {
   width: 'auto',
   height: '100vh',
   components: [],
+  extraConfig: {}
 };
 ```
 
