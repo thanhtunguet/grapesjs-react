@@ -122,4 +122,4 @@ Editor.defaultProps = {
 
 export default Editor;
 
-(window as any).GrapesJS = GrapesJS;
+Object.defineProperty(window, nameof(GrapesJS), GrapesJS);

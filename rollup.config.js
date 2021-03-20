@@ -9,7 +9,7 @@ import svgr from '@svgr/rollup';
 
 import pkg from './package.json';
 
-export default {
+const rollupConfig = {
   input: 'src/grapesjs-react.tsx',
   output: [
     {
@@ -41,3 +41,5 @@ export default {
     commonjs(),
   ],
 };
+
+export default rollupConfig;
