@@ -1,83 +1,92 @@
 grapesjs-react
 ==============
+_A React wrapper library for [GrapesJS](https://grapesjs.com)_
 
-_React wrapper for GrapesJS_
+## Installation
 
-`grapesjs-react` v3 was fully rewritten from scratch. The package is now only responsible to expose hooks and control the editor lifecycle for these reasons:
-- This package depends on `artf/grapesjs`, which does not support Typescript. It is hard to implement custom features Components, Blocks without declaration files.
-- To be simple, this package should only control the lifecycle of the editor, leave the rest to the dependent projects.
-
-### Install
-```bash
-yarn add grapesjs-react
-// or
-npm i grapesjs-react --save
+```shell
+npm i -S grapesjs grapesjs-react
 ```
 
-### New editor props:
-```typescript
-export interface EditorProps {
-  // Prefix identifier that will be used inside storing and loading
-  id?: string;
-    
-  presetType?: 'webpage' | 'newsletter' | 'mjml';
-  
-  // https://grapesjs.com/docs/modules/Plugins.html#basic-plugin
-  plugins?: string[];
-    
-  children?: ReactElement<any> | Array<ReactElement<any>>;
-   
-  // https://github.com/artf/grapesjs/blob/dev/src/storage_manager/config/config.js
-  storageManager?: any;
-  
-  // https://github.com/artf/grapesjs/blob/dev/src/block_manager/config/config.js
-  blockManager?: any;
-    
-  // https://github.com/artf/grapesjs/blob/dev/src/style_manager/config/config.js  
-  styleManager?: {};
-    
-  width?: string | number;
-    
-  height?: string | number;
-  
-  // https://grapesjs.com/docs/modules/Components.html
-  components?: object[];
-    
-  blocks?: object[];
-    
-  onInit?(editor): void;
-    
-  onDestroy?(editor): void;
+or
 
-  extraConfig?: object
-}
- ```
+```shell
+yarn add grapesjs grapesjs-react
+```
 
-### Default props of the editor:
+## Usage
 
-```typescript
-Editor.defaultProps = {
-  id: 'grapesjs-react-editor',
-  presetType: 'newsletter',
-  plugins: [],
-  blocks: [],
-  blockManager: {},
-  storageManager: {},
-  styleManager: {},
-  width: 'auto',
-  height: '100vh',
-  components: [],
-  extraConfig: {}
+#### WebPage
+
+You need to install the [grapesjs-preset-webpage](https://www.npmjs.com/package/grapesjs-preset-webpage) plugin
+
+```tsx
+import 'grapesjs-preset-webpage';
+
+export const Primary = () => {
+  return <GrapesjsReact
+    id='grapesjs-react'
+    plugins={[
+      'gjs-preset-webpage',
+      'gjs-blocks-basic'
+    ]}
+  />;
 };
 ```
 
-### Introduce new hooks:
-  - `onInit`: Called after editor initializing, used for adding custom components, blocks, etc, ...
-  - `onDestroy`: Called before editor unmounting, used for cleaning up.
+#### Newsletter
 
-### Import CSS:
-```typescript
-import 'grapesjs/dist/css/grapes.min.css';
+You need to install the [grapesjs-preset-newsletter](https://www.npmjs.com/package/grapesjs-preset-newsletter) plugin
+
+```tsx
+import 'grapesjs-preset-newsletter';
+
+export const Newsletter = () => {
+  return <GrapesjsReact
+    id='grapesjs-react'
+    plugins={[
+      'gjs-preset-newsletter',
+      'gjs-blocks-basic'
+    ]}
+  />;
+};
 ```
 
-See storybook demo: [https://grapesjs-react.thanhtunguet.info](https://grapesjs-react.thanhtunguet.info)
+#### MJML
+
+You need to install the [grapesjs-mjml](https://www.npmjs.com/package/grapesjs-mjml) plugin
+
+```tsx
+import 'grapesjs-mjml';
+
+export const MJML = () => {
+  return <GrapesjsReact
+    id='grapesjs-react'
+    plugins={[
+      'grapesjs-mjml',
+      'gjs-blocks-basic'
+    ]}
+  />;
+};
+```
+
+## Props detail
+
+Editor's props extends the base GrapesJS editor options.
+
+| Name | Desc | Type |
+| -- | -- | -- |
+| id | string | Editor container id |
+| children | ReactNode[] | Children to init (using fromElement) |
+| onInit | Function<Editor> | Function will be called after editor was initialized |
+| onDestroy | Function<void> | Function will be called when editor unmounted |
+
+The rest props will be passed as options to initialize editor. You can use any options of grapesjs like *plugins*, *blockManager*, *styleManager*, *storageManager*, ...
+
+## Contribution
+
+If you find a bug or need any help, please create an issue.
+
+Pull requests are welcome.
+
+&copy;2021 [thanhtunguet](https://thanhtunguet.github.io)

@@ -10,4 +10,4 @@ jobs:
     - name: Test
       run: |
         yarn install
-        yarn test --watchAll=false
+        yarn test grapesjs-react

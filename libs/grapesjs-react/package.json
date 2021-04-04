@@ -1,0 +1,22 @@
+{
+  "name": "grapesjs-react",
+  "version": "0.0.1",
+  "description": "React wrapper for GrapesJS",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "grapesjs": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "repository": {
+    "url": "https://github.com/thanhtunguet/grapesjs-react"
+  },
+  "author": {
+    "url": "https://github.com/thanhtunguet",
+    "name": "thanhtunguet",
+    "email": "thanhtung.uet@gmail.com"
+  },
+  "maintainers": [],
+  "contributors": []
+}
