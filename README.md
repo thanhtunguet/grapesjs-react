@@ -2,6 +2,8 @@ grapesjs-react
 ==============
 _A React wrapper library for [GrapesJS](https://grapesjs.com)_
 
+[Online Demo](https://thanhtunguet.github.io/grapesjs-react)
+
 ## Installation
 
 ```shell
