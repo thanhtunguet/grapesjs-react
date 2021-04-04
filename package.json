@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-react",
-  "version": "0.0.0",
+  "version": "4.0.0-alpha",
   "license": "MIT",
   "scripts": {
     "nx": "nx",
