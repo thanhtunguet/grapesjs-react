@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.3b84d77a.chunk.css","sources":["webpack:///with-sample-code.scss"],"sourcesContent":[".sample-code-container {\n  .sample-code {\n    margin-bottom: 0.5rem;\n  }\n\n  .demo {\n  }\n}\n"],"mappings":";;;AAAA;;;;;","sourceRoot":""}
