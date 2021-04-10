@@ -73,7 +73,7 @@ const Editor = React.forwardRef<IEditor | null, PropsWithChildren<EditorProps>>(
             presets[presetType],
             ...propPlugins,
           ],
-          ...extraConfig
+          ...extraConfig,
         });
         if (typeof onInit === 'function') {
           onInit(editor);
@@ -122,9 +122,7 @@ Editor.defaultProps = {
   width: 'auto',
   height: '100vh',
   components: [],
-  extraConfig: {}
+  extraConfig: {},
 };
 
 export default Editor;
-
-Object.defineProperty(window, nameof(GrapesJS), GrapesJS);

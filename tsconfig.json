@@ -14,7 +14,7 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -22,7 +22,7 @@
     ],
     "module": "ESNext",
     "moduleResolution": "node",
-    "noEmit": false,
+    "noEmit": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
     "noUnusedLocals": true,
@@ -40,7 +40,8 @@
     "target": "ES5",
     "typeRoots": [
       "node_modules/@types/"
-    ]
+    ],
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": [
     "build/",
