@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, {PropsWithChildren} from 'react';
 import GrapesJS from 'grapesjs';
 
 export interface GrapesjsReactProps {
@@ -12,20 +12,24 @@ export interface GrapesjsReactProps {
 export function GrapesjsReact(
   props: PropsWithChildren<GrapesjsReactProps> & Parameters<typeof GrapesJS.init>[0]
 ) {
-  const { id, onInit, onDestroy, children, ...options } = props;
+  const {id, onInit, onDestroy, children, ...options} = props;
 
   const [editor, setEditor] = React.useState<GrapesJS.Editor>();
 
   React.useEffect(() => {
-    const selector: string = `#${id}`;
+    const selector = `#${id}`;
     if (!editor) {
-      setEditor(GrapesJS.init({
+      const editor = GrapesJS.init({
         container: selector,
         fromElement: !!children,
         ...options
-      }));
+      });
+      setEditor(editor);
+      if (typeof onInit === 'function') {
+        onInit(editor);
+      }
     }
-  }, []);
+  }, [children, editor, id, onInit, options]);
 
   React.useEffect(() => {
     return function cleanup() {
@@ -40,7 +44,7 @@ export function GrapesjsReact(
         editor.destroy();
       }
     }
-  }, [editor]);
+  }, [editor, onDestroy]);
 
   return (
     <div id={id}>
