@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-react",
-  "version": "4.0.0-alpha",
+  "version": "4.0.0",
   "license": "MIT",
   "scripts": {
     "nx": "nx",
@@ -25,14 +25,14 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
-    "core-js": "^3.6.5",
-    "document-register-element": "1.13.1",
+    "core-js": "^3.24.1",
+    "document-register-element": "^1.14.10",
     "react": "17.0.1",
     "react-dom": "17.0.1",
-    "regenerator-runtime": "0.13.7",
-    "tslib": "^2.0.0"
+    "regenerator-runtime": "^0.13.9",
+    "tslib": "^2.4.0"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
@@ -73,10 +73,10 @@
     "eslint-plugin-react": "7.21.5",
     "eslint-plugin-react-hooks": "4.2.0",
     "gh-pages": "^3.1.0",
-    "grapesjs": "^0.16.45",
+    "grapesjs": "^0.19.5",
     "grapesjs-blocks-basic": "^0.1.8",
-    "grapesjs-mjml": "^0.5.2",
-    "grapesjs-preset-newsletter": "^0.2.20",
+    "grapesjs-mjml": "^0.6.0",
+    "grapesjs-preset-newsletter": "^0.2.21",
     "grapesjs-preset-webpage": "^0.1.11",
     "jest": "26.2.2",
     "prettier": "2.2.1",
