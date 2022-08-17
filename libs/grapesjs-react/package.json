@@ -1,11 +1,11 @@
 {
   "name": "grapesjs-react",
-  "version": "4.0.1-alpha",
+  "version": "4.0.1",
   "description": "React wrapper for GrapesJS",
   "license": "MIT",
   "private": false,
   "peerDependencies": {
-    "grapesjs": "*",
+    "grapesjs": "^0.19.5",
     "react": "*",
     "react-dom": "*"
   },
