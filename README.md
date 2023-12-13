@@ -7,13 +7,13 @@ _A React wrapper library for [GrapesJS](https://grapesjs.com)_
 ## Installation
 
 ```shell
-npm i -S grapesjs grapesjs-react
+npm i -S grapesjs grapesjs-react grapesjs-blocks-basic
 ```
 
 or
 
 ```shell
-yarn add grapesjs grapesjs-react
+yarn add grapesjs grapesjs-react grapesjs-blocks-basic
 ```
 
 ## Usage
@@ -23,14 +23,16 @@ yarn add grapesjs grapesjs-react
 You need to install the [grapesjs-preset-webpage](https://www.npmjs.com/package/grapesjs-preset-webpage) plugin
 
 ```tsx
-import 'grapesjs-preset-webpage';
+import 'grapesjs/dist/css/grapes.min.css';
+import gjspresetwebpage from 'grapesjs-preset-webpage';
+import gjsblockbasic from 'grapesjs-blocks-basic'
 
 export const Primary = () => {
   return <GrapesjsReact
     id='grapesjs-react'
     plugins={[
-      'gjs-preset-webpage',
-      'gjs-blocks-basic'
+      gjspresetwebpage,
+      gjsblockbasic
     ]}
   />;
 };
@@ -41,14 +43,16 @@ export const Primary = () => {
 You need to install the [grapesjs-preset-newsletter](https://www.npmjs.com/package/grapesjs-preset-newsletter) plugin
 
 ```tsx
-import 'grapesjs-preset-newsletter';
+import 'grapesjs/dist/css/grapes.min.css';
+import gjsblockbasic from 'grapesjs-blocks-basic'
+import gjspresetnewsletter from 'grapesjs-preset-newsletter';
 
 export const Newsletter = () => {
   return <GrapesjsReact
     id='grapesjs-react'
     plugins={[
-      'gjs-preset-newsletter',
-      'gjs-blocks-basic'
+      gjsblockbasic, 
+      gjspresetnewsletter
     ]}
   />;
 };
@@ -59,14 +63,16 @@ export const Newsletter = () => {
 You need to install the [grapesjs-mjml](https://www.npmjs.com/package/grapesjs-mjml) plugin
 
 ```tsx
-import 'grapesjs-mjml';
+import 'grapesjs/dist/css/grapes.min.css';
+import gjsblockbasic from 'grapesjs-blocks-basic'
+import gjsmjml from 'grapesjs-mjml';
 
 export const MJML = () => {
   return <GrapesjsReact
     id='grapesjs-react'
     plugins={[
-      'grapesjs-mjml',
-      'gjs-blocks-basic'
+      gjsblockbasic,
+      gjsmjml
     ]}
   />;
 };
