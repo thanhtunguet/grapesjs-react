@@ -4,6 +4,16 @@ _A React wrapper library for [GrapesJS](https://grapesjs.com)_
 
 [Online Demo](https://thanhtunguet.github.io/grapesjs-react)
 
+## 📢 Project Maintenance Notice
+
+As of [May 2025], I am no longer working as a web developer and am unable to actively maintain this project.
+
+While I may not have time to implement new features or fixes myself, I truly appreciate any pull requests from the community. I’ll do my best to review them when possible.
+
+If you have questions or need help, feel free to reach out to me via email: sample@example.com.
+
+Thanks to everyone who has used and contributed to this library!
+
 ## Installation
 
 ```shell
