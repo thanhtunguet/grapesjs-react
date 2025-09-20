@@ -6,13 +6,7 @@ _A React wrapper library for [GrapesJS](https://grapesjs.com)_
 
 ## 📢 Project Maintenance Notice
 
-As of [May 2025], I am no longer working as a web developer and am unable to actively maintain this project.
-
-While I may not have time to implement new features or fixes myself, I truly appreciate any pull requests from the community. I’ll do my best to review them when possible.
-
-If you have questions or need help, feel free to reach out to me via email: sample@example.com.
-
-Thanks to everyone who has used and contributed to this library!
+I originally built this library in 2018 during my internship at Teko Vietnam, when GrapesJS was still new and didn’t yet have a React wrapper. To my surprise, it grew to over 200 stars on GitHub and helped developers around the world get their work done. Now that GrapesJS offers its own official React library, it feels like the right time to retire this project. Thank you all for your support!
 
 ## Installation
 
