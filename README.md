@@ -8,6 +8,8 @@ _A React wrapper library for [GrapesJS](https://grapesjs.com)_
 
 I originally built this library in 2018 during my internship at Teko Vietnam, when GrapesJS was still new and didn’t yet have a React wrapper. To my surprise, it grew to over 200 stars on GitHub and helped developers around the world get their work done. Now that GrapesJS offers its own official React library, it feels like the right time to retire this project. Thank you all for your support!
 
+You can visit Grapesjs's official library here: [https://github.com/GrapesJS/react](https://github.com/GrapesJS/react)
+
 ## Installation
 
 ```shell
