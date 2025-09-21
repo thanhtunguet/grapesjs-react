@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-react",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "React wrapper for GrapesJS",
   "license": "MIT",
   "private": false,
@@ -16,6 +16,6 @@
   "author": {
     "url": "https://github.com/thanhtunguet",
     "name": "thanhtunguet",
-    "email": "thanhtung.uet@gmail.com"
+    "email": "pham@thanhtunguet.info"
   }
 }
